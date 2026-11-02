@@ -325,14 +325,14 @@ img{max-width:100%;display:block}
 }
 .text-wrapper.fading{opacity:0}
 
-/* Value Grid Section */
+/* Value Grid Section (Brand Blue Background) */
 .band{
-  background:var(--dark-blue-deep);
+  background:var(--brand-blue);
   color:var(--white);
 }
-.band .eyebrow{color:var(--brand-teal)}
+.band .eyebrow{color:#E2E8F0}
 .band .section-title{color:var(--white)}
-.band .section-copy{color:rgba(255,255,255,0.7)}
+.band .section-copy{color:rgba(255,255,255,0.85)}
 .value-grid{
   display:grid;
   grid-template-columns:repeat(4, 1fr);
@@ -341,18 +341,18 @@ img{max-width:100%;display:block}
 }
 .value{
   padding:32px 24px;
-  border:1px solid rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
   border-radius:var(--radius-md);
-  background:rgba(255,255,255,0.02);
+  background:rgba(255,255,255,0.05);
   transition:var(--transition);
 }
 .value:hover{
-  border-color:var(--brand-teal);
-  background:rgba(255,255,255,0.05);
+  border-color:var(--white);
+  background:rgba(255,255,255,0.1);
 }
 .value b{
   display:block;
-  color:var(--brand-teal);
+  color:var(--white);
   font-size:14px;
   font-weight:700;
   margin-bottom:12px;
@@ -365,7 +365,7 @@ img{max-width:100%;display:block}
 }
 .value p{
   margin:0;
-  color:rgba(255,255,255,0.7);
+  color:rgba(255,255,255,0.85);
   font-size:14px;
 }
 
@@ -421,6 +421,15 @@ img{max-width:100%;display:block}
 }
 .check h3{margin:0 0 4px;color:var(--dark-blue-deep);font-size:16px;font-weight:700}
 .check p{margin:0;color:var(--text-muted);font-size:14px}
+
+/* Section Divider Line (Thin Seamless Gradient of Gray) */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.4), transparent);
+  margin: 0;
+  border: none;
+}
 
 /* Insights Section */
 .news-grid{
@@ -658,6 +667,9 @@ img{max-width:100%;display:block}
     </div>
   </div>
 </section>
+
+<!-- Thin Seamless Gradient Divider Line -->
+<hr class="section-divider">
 
 <section class="section reveal" id="insights">
   <div class="center">

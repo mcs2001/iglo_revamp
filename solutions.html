@@ -72,9 +72,9 @@ img{max-width:100%;display:block}
 .nav a.active{color:var(--brand-blue);font-weight:700}
 .menu{display:none;border:1px solid var(--border-color);background:var(--white);width:40px;height:40px;font-size:20px;cursor:pointer;border-radius:var(--radius-sm)}
 
-/* Page Title Section */
+/* Hero Header Section */
 .page-header{
-  padding:80px 8vw 50px;
+  padding:70px 8vw 40px;
   background:var(--bg-light);
   border-bottom:1px solid var(--border-color);
 }
@@ -92,75 +92,151 @@ img{max-width:100%;display:block}
   max-width:700px;
 }
 
-/* Solutions List / Grid */
-.solutions-container{
-  padding:80px 8vw;
-  display:grid;
-  gap:64px;
+/* Overlapping Left Card Hero Banner (Lineage Style Opposite Layout) */
+.solutions-hero-banner{
+  position:relative;
+  min-height:600px;
+  background:url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:60px 8vw;
 }
-.solution-row{
+/* Brand Overlay Tint (#005581 @ 45%) */
+.solutions-hero-banner::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0, 85, 129, 0.45);
+}
+
+/* White Card Overlay (Left-Aligned) */
+.left-card{
+  position:relative;
+  z-index:2;
+  background:var(--white);
+  width:100%;
+  max-width:540px;
+  padding:50px 44px;
+  box-shadow:0 20px 40px rgba(0, 0, 0, 0.15);
+  border-radius:var(--radius-sm);
+}
+.left-card .card-category{
+  color:var(--brand-blue);
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  display:block;
+  margin-bottom:12px;
+}
+.left-card h2{
+  margin:0 0 16px;
+  color:var(--dark-blue-deep);
+  font-size:32px;
+  font-weight:700;
+  line-height:1.2;
+}
+.left-card p{
+  margin:0 0 28px;
+  color:var(--text-muted);
+  font-size:16px;
+  line-height:1.6;
+}
+.left-card-links{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.card-link{
+  color:var(--dark-blue-deep);
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border-bottom:2px solid var(--brand-teal);
+  padding-bottom:4px;
+  width:fit-content;
+  transition:var(--transition);
+}
+.card-link:hover{
+  color:var(--brand-blue);
+  border-color:var(--brand-blue);
+}
+
+/* Solutions Detail Grid Section */
+.solutions-container{
+  padding:90px 8vw;
+  background:var(--white);
+  display:grid;
+  gap:80px;
+}
+.solution-block{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:48px;
+  gap:60px;
   align-items:center;
-  padding-bottom:64px;
+  padding-bottom:60px;
   border-bottom:1px solid var(--border-color);
 }
-.solution-row:last-child{border-bottom:none;padding-bottom:0}
-.solution-row:nth-child(even){direction:rtl}
-.solution-row:nth-child(even) > *{direction:ltr}
-
-.solution-content h2{
+.solution-block:last-child{
+  border-bottom:none;
+  padding-bottom:0;
+}
+.solution-info h3{
   margin:0 0 16px;
   color:var(--dark-blue-deep);
   font-size:28px;
   font-weight:700;
 }
-.solution-content p{
-  margin:0 0 20px;
+.solution-info p{
+  margin:0 0 24px;
   color:var(--text-muted);
   font-size:16px;
   line-height:1.7;
 }
-.solution-features{
+.solution-checklist{
   list-style:none;
   padding:0;
   margin:0;
   display:grid;
-  gap:10px;
+  gap:12px;
 }
-.solution-features li{
+.solution-checklist li{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
   font-size:15px;
   color:var(--text-main);
   font-weight:500;
 }
-.solution-features li::before{
+.solution-checklist li::before{
   content:"✓";
   color:var(--brand-teal);
   font-weight:700;
+  font-size:16px;
 }
 
-.solution-image-box{
+.solution-photo-frame{
   position:relative;
-  height:340px;
+  height:380px;
   border-radius:var(--radius-md);
   overflow:hidden;
-  background:var(--img-url) center/cover;
+  background:var(--img-bg) center/cover;
 }
-.solution-image-box::before{
+.solution-photo-frame::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0, 85, 129, 0.35); /* Brand overlay tint */
+  background:rgba(2, 58, 87, 0.35); /* Brand Overlay Tint */
 }
 
-/* Inquiry / Quote Form Section (Updated Colors) */
+/* Inquiry Section (Brand Blue Background & Brand Green Button) */
 .inquiry-section{
   padding:90px 8vw;
-  background:var(--brand-blue); /* Updated to Brand Blue #0072AE */
+  background:var(--brand-blue);
   color:var(--white);
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -187,6 +263,7 @@ img{max-width:100%;display:block}
   color:var(--text-main);
   display:grid;
   gap:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 .form-group{
   display:flex;
@@ -230,7 +307,7 @@ img{max-width:100%;display:block}
   transition:var(--transition);
 }
 .btn.submit-btn{
-  background:var(--brand-green); /* Updated to Brand Green #53BB48 */
+  background:var(--brand-green);
   color:var(--white);
   width:100%;
 }
@@ -256,8 +333,10 @@ img{max-width:100%;display:block}
 @media(max-width:960px){
   .nav{display:none}
   .menu{display:block}
-  .solution-row,.solution-row:nth-child(even),.inquiry-section,.footer{grid-template-columns:1fr;gap:40px}
-  .solution-row:nth-child(even) > *{direction:ltr}
+  .solutions-hero-banner{padding:40px 6vw}
+  .left-card{max-width:100%;padding:32px 24px}
+  .solution-block,.inquiry-section,.footer{grid-template-columns:1fr;gap:40px}
+  .footer-links{justify-content:flex-start}
 }
 </style>
 </head>
@@ -278,60 +357,73 @@ img{max-width:100%;display:block}
 </header>
 
 <main>
-  <!-- Page Title -->
+  <!-- Page Header -->
   <section class="page-header">
     <h1>Solutions</h1>
     <p>Comprehensive, temperature-controlled cold chain logistics solutions engineered to protect product integrity from origin to destination across Malaysia and Southeast Asia.</p>
   </section>
 
-  <!-- Clear Message / Operational Solutions Sections -->
-  <section class="solutions-container">
+  <!-- Lineage-Style Left-Aligned Overlapping White Box Hero -->
+  <section class="solutions-hero-banner">
+    <div class="left-card">
+      <span class="card-category">Integrated Infrastructure</span>
+      <h2>Count on a more connected cold chain</h2>
+      <p>Our strategically located cold chain hub in Port Klang provides seamless integration between multi-temperature storage, blast freezing, and nationwide refrigerated transport for food, beverage, and pharmaceutical leaders[cite: 1, 4].</p>
+      <div class="left-card-links">
+        <a href="#services-detail" class="card-link">Explore Capabilities ▶</a>
+        <a href="#quote" class="card-link">Request Custom Quote ▶</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Solutions Blocks -->
+  <section class="solutions-container" id="services-detail">
     
-    <!-- Solution 1 -->
-    <div class="solution-row">
-      <div class="solution-content">
-        <h2>Multi-Temperature Storage & Warehousing</h2>
-        <p>State-of-the-art cold storage facilities situated in Port Klang[cite: 1], operating seamlessly from chilled environments down to -25°C. Designed to accommodate food, beverage, and pharmaceutical products with rigorous inventory control[cite: 4, 6].</p>
-        <ul class="solution-features">
+    <!-- Block 1 -->
+    <div class="solution-block">
+      <div class="solution-info">
+        <h3>Multi-Temperature Storage & Warehousing</h3>
+        <p>State-of-the-art cold storage facilities situated in Port Klang[cite: 1], operating seamlessly from chilled environments down to -25°C. Built to accommodate demanding food and pharmaceutical supply chain specifications[cite: 4].</p>
+        <ul class="solution-checklist">
           <li>Automated Warehouse Management Systems (WMS) for real-time tracking</li>
-          <li>Strict FEFO and FIFO batch rotation protocols</li>
-          <li>JAKIM Halal, HACCP, and ISO 22000 certified standards</li>
+          <li>Strict FEFO and FIFO batch rotation management</li>
+          <li>JAKIM Halal, HACCP, and ISO 22000 certified infrastructure</li>
         </ul>
       </div>
-      <div class="solution-image-box" style="--img-url:url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1200&q=80')"></div>
+      <div class="solution-photo-frame" style="--img-bg:url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1200&q=80')"></div>
     </div>
 
-    <!-- Solution 2 -->
-    <div class="solution-row">
-      <div class="solution-content">
-        <h2>Refrigerated Transportation & Distribution</h2>
-        <p>A dependable, GPS-monitored fleet of refrigerated trucks providing seamless distribution across Peninsular Malaysia, backed by reliable cross-border capabilities into Singapore and Thailand.</p>
-        <ul class="solution-features">
-          <li>Continuous temperature loggers and real-time GPS tracking</li>
-          <li>Maintained thermal chain integrity from loading dock to delivery point</li>
-          <li>Experienced drivers trained in cold chain handling guidelines</li>
+    <!-- Block 2 -->
+    <div class="solution-block">
+      <div class="solution-info">
+        <h3>Refrigerated Transportation & Distribution</h3>
+        <p>A modern, GPS-monitored fleet of refrigerated trucks delivering distribution across Peninsular Malaysia, backed by reliable cross-border connectivity to Singapore and Thailand.</p>
+        <ul class="solution-checklist">
+          <li>Continuous temperature loggers and live GPS tracking</li>
+          <li>Uncompromised thermal chain integrity from loading dock to delivery</li>
+          <li>Experienced drivers trained in strict cold chain handling standards</li>
         </ul>
       </div>
-      <div class="solution-image-box" style="--img-url:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80')"></div>
+      <div class="solution-photo-frame" style="--img-bg:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80')"></div>
     </div>
 
-    <!-- Solution 3 -->
-    <div class="solution-row">
-      <div class="solution-content">
-        <h2>Blast Freezing & Value-Added Services</h2>
-        <p>Specialized processing support including high-capacity blast freezing for rapid core temperature pull-down, controlled thawing rooms, and full container plug-in and handling services.</p>
-        <ul class="solution-features">
-          <li>Rapid blast freezing tunnels for maximum freshness retention</li>
-          <li>Controlled thawing chambers designed to minimize drip loss</li>
-          <li>Custom repacking, labeling, and container clearance support</li>
+    <!-- Block 3 -->
+    <div class="solution-block">
+      <div class="solution-info">
+        <h3>Blast Freezing & Value-Added Services</h3>
+        <p>Specialized processing support including high-capacity blast freezing for rapid core temperature pull-down, controlled thawing rooms, and full container handling services.</p>
+        <ul class="solution-checklist">
+          <li>Rapid blast freezing tunnels preserving cell structure and freshness</li>
+          <li>Controlled thawing chambers engineered to minimize drip loss</li>
+          <li>Custom repacking, labeling, container plug-in, and customs clearance</li>
         </ul>
       </div>
-      <div class="solution-image-box" style="--img-url:url('https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=1200&q=80')"></div>
+      <div class="solution-photo-frame" style="--img-bg:url('https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=1200&q=80')"></div>
     </div>
 
   </section>
 
-  <!-- Clean Inquiry / Quote Form Section -->
+  <!-- Clean Inquiry Section (Brand Blue BG & Brand Green Button) -->
   <section class="inquiry-section" id="quote">
     <div class="inquiry-info">
       <h2>Ready to Discuss Your Cold Chain Requirements?</h2>

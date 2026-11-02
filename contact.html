@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us | IGLO Malaysia</title>
+<meta name="description" content="Get in touch with IGLO's cold chain specialists in Port Klang for cold storage, blast freezing, and refrigerated transport inquiries." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Primary Brand Palette */
+  --brand-blue: #0072AE;
+  --brand-teal: #009F93;
+  --brand-green: #53BB48;
+  
+  /* Secondary Dark Palette */
+  --dark-blue-light: #005581;
+  --dark-blue-mid: #023A57;
+  --dark-blue-deep: #072232;
+  
+  /* Neutrals & UI */
+  --bg-light: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --border-color: #E2E8F0;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --white: #FFFFFF;
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --transition: all 0.25s ease-in-out;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Roboto", Arial, sans-serif;
+  color:var(--text-main);
+  background:var(--white);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* Header & Nav */
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 8vw;
+  background:rgba(255, 255, 255, 0.96);
+  border-bottom:1px solid var(--border-color);
+  backdrop-filter:blur(10px);
+}
+.logo{display:flex;align-items:center}
+.logo-img{height:42px;width:auto;min-width:120px;object-fit:contain}
+.nav{
+  display:flex;
+  gap:32px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--text-main);
+}
+.nav a{transition:var(--transition);position:relative}
+.nav a:hover{color:var(--brand-blue)}
+.nav a.active{color:var(--brand-blue);font-weight:700}
+.menu{display:none;border:1px solid var(--border-color);background:var(--white);width:40px;height:40px;font-size:20px;cursor:pointer;border-radius:var(--radius-sm)}
+
+/* Hero Header Banner (Matching White Card Style) */
+.contact-hero-banner{
+  position:relative;
+  min-height:360px;
+  background:url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:60px 8vw;
+}
+/* Brand Overlay Tint (#005581 @ 45%)[cite: 20] */
+.contact-hero-banner::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0, 85, 129, 0.45);
+}
+
+/* White Card Overlay (Left-Aligned) */
+.left-card{
+  position:relative;
+  z-index:2;
+  background:var(--white);
+  width:100%;
+  max-width:580px;
+  padding:44px 40px;
+  box-shadow:0 20px 40px rgba(0, 0, 0, 0.15);
+  border-radius:var(--radius-sm);
+}
+.left-card h1{
+  margin:0 0 12px;
+  color:var(--dark-blue-deep);
+  font-size:clamp(32px, 3.5vw, 40px);
+  font-weight:700;
+  line-height:1.2;
+}
+.left-card p{
+  margin:0;
+  color:var(--text-muted);
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* Main Contact Layout Section */
+.contact-container{
+  padding:80px 8vw;
+  background:var(--white);
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:64px;
+  align-items:start;
+}
+
+/* Left Column: Corporate Office Info */
+.contact-info{
+  display:grid;
+  gap:36px;
+}
+.info-block h3{
+  margin:0 0 12px;
+  color:var(--dark-blue-deep);
+  font-size:20px;
+  font-weight:700;
+  border-left:3px solid var(--brand-blue);
+  padding-left:12px;
+}
+.info-block p{
+  margin:0 0 6px;
+  color:var(--text-muted);
+  font-size:15px;
+  line-height:1.6;
+}
+.info-block strong{
+  color:var(--text-main);
+  font-weight:500;
+}
+.info-block a{
+  color:var(--brand-blue);
+  transition:var(--transition);
+}
+.info-block a:hover{
+  text-decoration:underline;
+}
+
+.operating-hours{
+  background:var(--bg-light);
+  border:1px solid var(--border-color);
+  padding:24px;
+  border-radius:var(--radius-sm);
+  display:grid;
+  gap:10px;
+}
+.hours-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+  border-bottom:1px solid var(--border-color);
+  padding-bottom:8px;
+}
+.hours-row:last-child{
+  border-bottom:none;
+  padding-bottom:0;
+}
+.hours-row span{color:var(--text-muted)}
+.hours-row strong{color:var(--dark-blue-deep);font-weight:700}
+
+/* Right Column: Clean Form Section (Brand Blue Container) */
+.form-wrapper{
+  background:var(--brand-blue);
+  padding:44px;
+  border-radius:var(--radius-md);
+  color:var(--white);
+  box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+.form-wrapper h2{
+  margin:0 0 10px;
+  font-size:26px;
+  font-weight:700;
+  color:var(--white);
+}
+.form-wrapper p{
+  margin:0 0 28px;
+  color:rgba(255, 255, 255, 0.9);
+  font-size:15px;
+}
+
+.contact-form{
+  background:var(--white);
+  padding:32px;
+  border-radius:var(--radius-sm);
+  color:var(--text-main);
+  display:grid;
+  gap:18px;
+}
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.form-group label{
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  color:var(--dark-blue-deep);
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  padding:12px 14px;
+  border:1px solid var(--border-color);
+  border-radius:var(--radius-sm);
+  font-family:inherit;
+  font-size:14px;
+  outline:none;
+  transition:var(--transition);
+  background:var(--white);
+  color:var(--text-main);
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--brand-blue);
+  box-shadow:0 0 0 3px rgba(0, 114, 174, 0.1);
+}
+.form-group textarea{
+  resize:vertical;
+  height:110px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:48px;
+  padding:0 28px;
+  border-radius:var(--radius-sm);
+  font-size:14px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  border:none;
+  cursor:pointer;
+  transition:var(--transition);
+}
+.btn.submit-btn{
+  background:var(--brand-green);
+  color:var(--white);
+  width:100%;
+}
+.btn.submit-btn:hover{
+  background:#44a339;
+}
+
+/* Location Map Container */
+.map-section{
+  padding:0 8vw 80px;
+}
+.map-frame{
+  width:100%;
+  height:380px;
+  border:1px solid var(--border-color);
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  background:url("https://images.unsplash.com/photo-1627309366653-2dedc084cdf1?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+  position:relative;
+}
+.map-frame::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(7, 34, 50, 0.55);
+}
+.map-overlay-card{
+  position:absolute;
+  bottom:24px;
+  left:24px;
+  background:var(--white);
+  padding:20px 24px;
+  border-radius:var(--radius-sm);
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  max-width:320px;
+}
+.map-overlay-card strong{
+  display:block;
+  color:var(--dark-blue-deep);
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:4px;
+}
+.map-overlay-card span{
+  color:var(--text-muted);
+  font-size:13px;
+}
+
+/* Footer */
+.footer{
+  padding:48px 8vw;
+  background:#051824;
+  color:rgba(255,255,255,0.7);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  font-size:14px;
+}
+.footer p{margin:8px 0 0;line-height:1.6}
+.footer-links{display:flex;gap:24px;justify-content:flex-end;color:var(--white);font-weight:500}
+.footer-links a:hover{color:var(--brand-teal)}
+
+/* Responsive */
+@media(max-width:960px){
+  .nav{display:none}
+  .menu{display:block}
+  .contact-hero-banner{padding:40px 6vw}
+  .left-card{max-width:100%;padding:32px 24px}
+  .contact-container,.form-row,.footer{grid-template-columns:1fr;gap:40px}
+  .form-wrapper{padding:28px 20px}
+  .contact-form{padding:24px 16px}
+  .footer-links{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="index.html">
+    <img src="IGLO_Logo_FC(RGB).png" alt="IGLO Logo" class="logo-img" />
+  </a>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="index.html#values">Why IGLO</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+  <button class="menu" aria-label="Toggle Navigation">☰</button>
+</header>
+
+<main>
+  <!-- Hero Section (Left-Aligned White Overlapping Card) -->
+  <section class="contact-hero-banner">
+    <div class="left-card">
+      <h1>Contact Us</h1>
+      <p>Connect directly with our cold storage specialists and logistics operations team in Port Klang, Selangor[cite: 1].</p>
+    </div>
+  </section>
+
+  <!-- Main Contact Content Section -->
+  <section class="contact-container">
+    
+    <!-- Left Column: Corporate & Operational Contacts -->
+    <div class="contact-info">
+      
+      <div class="info-block">
+        <h3>Primary Facility & Hub</h3>
+        <p><strong>ILM Logistics (M) Sdn Bhd (IGLO)</strong>[cite: 1]</p>
+        <p>Port Klang, Selangor, Malaysia[cite: 1]</p>
+      </div>
+
+      <div class="info-block">
+        <h3>Direct Communication</h3>
+        <p>Telephone: <a href="tel:+60331689626">+(6)03-3168 9626</a>[cite: 1]</p>
+        <p>Customer Service: <a href="mailto:customer.service@ilm-my.com">customer.service@ilm-my.com</a>[cite: 1]</p>
+        <p>General Inquiries: <a href="mailto:info@ilm-my.com">info@ilm-my.com</a></p>
+      </div>
+
+      <div class="info-block">
+        <h3>Operational Hours</h3>
+        <div class="operating-hours">
+          <div class="hours-row">
+            <span>Warehouse Receiving & Receiving Bays</span>
+            <strong>08:00 - 18:00 (Mon - Sat)</strong>
+          </div>
+          <div class="hours-row">
+            <span>Cold Storage Temperature Monitoring</span>
+            <strong>24 / 7 Active Monitoring</strong>
+          </div>
+          <div class="hours-row">
+            <span>Customer Support Services</span>
+            <strong>08:30 - 17:30 (Mon - Fri)</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Formal Inquiry Form Container -->
+    <div class="form-wrapper">
+      <h2>Send an Inquiry</h2>
+      <p>Fill out the required information below to request technical specifications, facility tours, or operational quotes.</p>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you. Your inquiry has been submitted to IGLO Customer Support.');">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" required placeholder="Enter first name">
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" required placeholder="Enter last name">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Corporate Email</label>
+            <input type="email" id="email" required placeholder="name@company.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required placeholder="+60 ...">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service Required</label>
+          <select id="service" required>
+            <option value="" disabled selected>Select service category</option>
+            <option value="storage">Multi-Temperature Cold Storage (-25°C to +15°C)</option>
+            <option value="transport">Refrigerated Transport & Cross-Border Logistics</option>
+            <option value="freezing">Rapid Blast Freezing & Thawing</option>
+            <option value="value">Container Plug-in & Value-Added Services</option>
+            <option value="other">General Business Inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message & Cargo Details</label>
+          <textarea id="message" required placeholder="Provide specific cargo type, required temperature range, pallet counts, or timelines..."></textarea>
+        </div>
+
+        <button type="submit" class="btn submit-btn">Submit Inquiry</button>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- Location Map Block -->
+  <section class="map-section">
+    <div class="map-frame">
+      <div class="map-overlay-card">
+        <strong>Strategic Port Klang Hub</strong>
+        <span>Direct access to Westports, Northport, and major highway connectivity[cite: 1].</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div>
+    <strong style="color:var(--white);font-size:18px">ILM Logistics (M) Sdn Bhd (IGLO)</strong>[cite: 1]
+    <p>Port Klang, Selangor, Malaysia[cite: 1]<br>Email: customer.service@ilm-my.com[cite: 1]<br>Phone: +(6)03-3168 9626[cite: 1]</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="facility.html">Facilities</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

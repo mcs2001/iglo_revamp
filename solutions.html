@@ -157,10 +157,10 @@ img{max-width:100%;display:block}
   background:rgba(0, 85, 129, 0.35); /* Brand overlay tint */
 }
 
-/* Inquiry / Quote Form Section */
+/* Inquiry / Quote Form Section (Updated Colors) */
 .inquiry-section{
   padding:90px 8vw;
-  background:var(--dark-blue-deep);
+  background:var(--brand-blue); /* Updated to Brand Blue #0072AE */
   color:var(--white);
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -175,7 +175,7 @@ img{max-width:100%;display:block}
 }
 .inquiry-info p{
   margin:0;
-  color:rgba(255,255,255,0.75);
+  color:rgba(255,255,255,0.9);
   font-size:16px;
   line-height:1.6;
 }
@@ -229,12 +229,14 @@ img{max-width:100%;display:block}
   cursor:pointer;
   transition:var(--transition);
 }
-.btn.primary{
-  background:var(--brand-blue);
+.btn.submit-btn{
+  background:var(--brand-green); /* Updated to Brand Green #53BB48 */
   color:var(--white);
   width:100%;
 }
-.btn.primary:hover{background:var(--dark-blue-light)}
+.btn.submit-btn:hover{
+  background:#44a339;
+}
 
 /* Footer */
 .footer{
@@ -348,7 +350,7 @@ img{max-width:100%;display:block}
         <label for="message">Your Inquiry / Details</label>
         <textarea id="message" required placeholder="Describe your storage or transportation needs..."></textarea>
       </div>
-      <button type="submit" class="btn primary">Submit Inquiry</button>
+      <button type="submit" class="btn submit-btn">Submit Inquiry</button>
     </form>
   </section>
 </main>

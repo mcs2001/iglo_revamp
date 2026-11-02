@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Solutions & Operational Excellence | IGLO Malaysia</title>
-<meta name="description" content="Explore IGLO's operational excellence across multi-temperature cold storage, blast freezing, controlled thawing, and fleet distribution." />
+<title>Solutions | IGLO Malaysia</title>
+<meta name="description" content="Explore IGLO's total cold chain solutions including multi-temperature storage, rapid blast freezing, controlled thawing, and nationwide refrigerated transport." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -30,7 +30,6 @@
   
   --radius-sm: 6px;
   --radius-md: 12px;
-  --radius-lg: 16px;
   --transition: all 0.25s ease-in-out;
 }
 
@@ -42,7 +41,6 @@ body{
   color:var(--text-main);
   background:var(--white);
   line-height:1.6;
-  overflow-x:hidden;
 }
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
@@ -55,7 +53,7 @@ img{max-width:100%;display:block}
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:16px 6vw;
+  padding:16px 8vw;
   background:rgba(255, 255, 255, 0.96);
   border-bottom:1px solid var(--border-color);
   backdrop-filter:blur(10px);
@@ -74,203 +72,149 @@ img{max-width:100%;display:block}
 .nav a.active{color:var(--brand-blue);font-weight:700}
 .menu{display:none;border:1px solid var(--border-color);background:var(--white);width:40px;height:40px;font-size:20px;cursor:pointer;border-radius:var(--radius-sm)}
 
-/* Page Header */
-.page-hero{
-  padding:80px 6vw 60px;
-  background:linear-gradient(180deg, var(--bg-light) 0%, #FFFFFF 100%);
+/* Page Title Section */
+.page-header{
+  padding:80px 8vw 50px;
+  background:var(--bg-light);
   border-bottom:1px solid var(--border-color);
 }
-.eyebrow{
-  color:var(--brand-teal);
-  font-size:13px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:0.08em;
-  margin-bottom:12px;
-  display:block;
-}
-.page-hero h1{
+.page-header h1{
   margin:0 0 16px;
   color:var(--dark-blue-deep);
-  font-size:clamp(36px, 4.5vw, 52px);
-  line-height:1.15;
+  font-size:clamp(36px, 4vw, 48px);
   font-weight:700;
+  line-height:1.15;
 }
-.page-hero p{
+.page-header p{
   margin:0;
   color:var(--text-muted);
   font-size:18px;
-  max-width:680px;
+  max-width:700px;
 }
 
-/* Unique UX: Interactive Operational Explorer */
-.explorer-section{
-  padding:80px 6vw;
-  background:var(--white);
-}
-.explorer-grid{
+/* Solutions List / Grid */
+.solutions-container{
+  padding:80px 8vw;
   display:grid;
-  grid-template-columns:340px 1fr;
-  gap:40px;
-  align-items:start;
+  gap:64px;
 }
+.solution-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  align-items:center;
+  padding-bottom:64px;
+  border-bottom:1px solid var(--border-color);
+}
+.solution-row:last-child{border-bottom:none;padding-bottom:0}
+.solution-row:nth-child(even){direction:rtl}
+.solution-row:nth-child(even) > *{direction:ltr}
 
-/* Operational Steps Selector */
-.ops-selector{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-.ops-btn{
-  display:flex;
-  flex-direction:column;
-  padding:20px 24px;
-  border:1px solid var(--border-color);
-  background:var(--bg-light);
-  border-radius:var(--radius-md);
-  text-align:left;
-  cursor:pointer;
-  transition:var(--transition);
-}
-.ops-btn:hover{
-  border-color:var(--brand-blue);
-  background:var(--white);
-}
-.ops-btn.active{
-  background:var(--dark-blue-deep);
-  border-color:var(--dark-blue-deep);
-  color:var(--white);
-}
-.ops-btn .step-num{
-  font-size:12px;
-  font-weight:700;
-  color:var(--brand-teal);
-  text-transform:uppercase;
-  margin-bottom:4px;
-}
-.ops-btn.active .step-num{color:var(--brand-teal)}
-.ops-btn .step-title{
-  font-size:17px;
-  font-weight:700;
+.solution-content h2{
+  margin:0 0 16px;
   color:var(--dark-blue-deep);
+  font-size:28px;
+  font-weight:700;
 }
-.ops-btn.active .step-title{color:var(--white)}
+.solution-content p{
+  margin:0 0 20px;
+  color:var(--text-muted);
+  font-size:16px;
+  line-height:1.7;
+}
+.solution-features{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+.solution-features li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:15px;
+  color:var(--text-main);
+  font-weight:500;
+}
+.solution-features li::before{
+  content:"✓";
+  color:var(--brand-teal);
+  font-weight:700;
+}
 
-/* Operational Display Stage */
-.ops-stage{
-  border:1px solid var(--border-color);
+.solution-image-box{
+  position:relative;
+  height:340px;
   border-radius:var(--radius-md);
   overflow:hidden;
-  background:var(--white);
-  box-shadow:0 10px 30px rgba(0,0,0,0.03);
+  background:var(--img-url) center/cover;
 }
-.ops-viewscreen{
-  position:relative;
-  height:420px;
-  background:var(--photo-url) center/cover;
-  transition:background-image 0.4s ease-in-out;
-}
-/* Brand Overlay Tint (5.3 Manual) */
-.ops-viewscreen::before{
+.solution-image-box::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0, 85, 129, 0.45);
+  background:rgba(0, 85, 129, 0.35); /* Brand overlay tint */
 }
-.ops-badge{
-  position:absolute;
-  top:24px;
-  right:24px;
-  background:rgba(7, 34, 50, 0.85);
+
+/* Inquiry / Quote Form Section */
+.inquiry-section{
+  padding:90px 8vw;
+  background:var(--dark-blue-deep);
   color:var(--white);
-  padding:8px 16px;
-  border-radius:var(--radius-sm);
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:0.05em;
-  backdrop-filter:blur(6px);
-  z-index:2;
-  border:1px solid rgba(255,255,255,0.2);
-}
-.ops-details{
-  padding:40px;
   display:grid;
-  grid-template-columns:1.2fr 0.8fr;
-  gap:32px;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
 }
-.ops-info h3{
-  margin:0 0 12px;
-  color:var(--dark-blue-deep);
-  font-size:26px;
+.inquiry-info h2{
+  margin:0 0 16px;
+  font-size:36px;
   font-weight:700;
+  color:var(--white);
 }
-.ops-info p{
-  margin:0 0 20px;
-  color:var(--text-muted);
-  font-size:15px;
+.inquiry-info p{
+  margin:0;
+  color:rgba(255,255,255,0.75);
+  font-size:16px;
+  line-height:1.6;
 }
-.ops-specs{
-  background:var(--bg-light);
-  padding:24px;
-  border-radius:var(--radius-sm);
-  border-left:3px solid var(--brand-blue);
+
+.inquiry-form{
+  background:var(--white);
+  padding:40px;
+  border-radius:var(--radius-md);
+  color:var(--text-main);
+  display:grid;
+  gap:20px;
+}
+.form-group{
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:6px;
 }
-.spec-item{
-  display:flex;
-  justify-content:space-between;
+.form-group label{
   font-size:13px;
-  border-bottom:1px solid var(--border-color);
-  padding-bottom:8px;
-}
-.spec-item:last-child{border-bottom:none;padding-bottom:0}
-.spec-item span{color:var(--text-muted)}
-.spec-item strong{color:var(--dark-blue-deep);font-weight:700}
-
-/* Standards Banner (Brand Blue Section) */
-.standards-banner{
-  background:var(--brand-blue);
-  color:var(--white);
-  padding:72px 6vw;
-}
-.standards-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:32px;
-  margin-top:40px;
-}
-.standard-card{
-  padding:28px;
-  border:1px solid rgba(255,255,255,0.2);
-  border-radius:var(--radius-md);
-  background:rgba(255,255,255,0.06);
-}
-.standard-card h4{
-  margin:0 0 10px;
-  font-size:18px;
-  color:var(--white);
   font-weight:700;
+  text-transform:uppercase;
+  color:var(--dark-blue-deep);
 }
-.standard-card p{
-  margin:0;
-  color:rgba(255,255,255,0.85);
-  font-size:14px;
+.form-group input,
+.form-group textarea{
+  padding:12px 16px;
+  border:1px solid var(--border-color);
+  border-radius:var(--radius-sm);
+  font-family:inherit;
+  font-size:15px;
+  outline:none;
+  transition:var(--transition);
 }
+.form-group input:focus,
+.form-group textarea:focus{
+  border-color:var(--brand-blue);
+}
+.form-group textarea{resize:vertical;height:100px}
 
-/* CTA & Footer */
-.cta{
-  padding:72px 6vw;
-  background:linear-gradient(135deg, var(--dark-blue-mid) 0%, var(--dark-blue-deep) 100%);
-  color:var(--white);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:32px;
-}
-.cta h2{margin:0;font-size:32px;font-weight:700}
-.cta p{margin:8px 0 0;color:rgba(255,255,255,0.8);font-size:16px}
 .btn{
   display:inline-flex;
   align-items:center;
@@ -279,17 +223,23 @@ img{max-width:100%;display:block}
   padding:0 28px;
   border-radius:var(--radius-sm);
   font-size:14px;
-  font-weight:500;
+  font-weight:700;
+  text-transform:uppercase;
   border:none;
   cursor:pointer;
   transition:var(--transition);
 }
-.btn.accent{background:var(--brand-green);color:var(--white)}
-.btn.accent:hover{background:#44a339}
+.btn.primary{
+  background:var(--brand-blue);
+  color:var(--white);
+  width:100%;
+}
+.btn.primary:hover{background:var(--dark-blue-light)}
 
+/* Footer */
 .footer{
-  padding:48px 6vw;
-  background:var(--dark-blue-deep);
+  padding:48px 8vw;
+  background:#051824;
   color:rgba(255,255,255,0.7);
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -304,10 +254,8 @@ img{max-width:100%;display:block}
 @media(max-width:960px){
   .nav{display:none}
   .menu{display:block}
-  .explorer-grid,.ops-details,.standards-grid,.cta,.footer{grid-template-columns:1fr}
-  .ops-viewscreen{height:300px}
-  .cta{flex-direction:column;align-items:flex-start}
-  .footer-links{justify-content:flex-start}
+  .solution-row,.solution-row:nth-child(even),.inquiry-section,.footer{grid-template-columns:1fr;gap:40px}
+  .solution-row:nth-child(even) > *{direction:ltr}
 }
 </style>
 </head>
@@ -328,97 +276,80 @@ img{max-width:100%;display:block}
 </header>
 
 <main>
-  <!-- Hero Section -->
-  <section class="page-hero">
-    <span class="eyebrow">Interactive Operational Framework</span>
-    <h1>Operational Excellence in Motion</h1>
-    <p>Step through our specialized cold chain infrastructure—engineered to maintain continuous temperature integrity across every critical handling node.</p>
+  <!-- Page Title -->
+  <section class="page-header">
+    <h1>Solutions</h1>
+    <p>Comprehensive, temperature-controlled cold chain logistics solutions engineered to protect product integrity from origin to destination across Malaysia and Southeast Asia.</p>
   </section>
 
-  <!-- Unique UX: Operational Explorer -->
-  <section class="explorer-section">
-    <div class="explorer-grid">
-      <!-- Selector Column -->
-      <div class="ops-selector">
-        <button class="ops-btn active" onclick="loadZone(0, this)">
-          <span class="step-num">Zone 01 / Warehousing</span>
-          <span class="step-title">Multi-Temp Vaults</span>
-        </button>
-        <button class="ops-btn" onclick="loadZone(1, this)">
-          <span class="step-num">Zone 02 / Thermal Processing</span>
-          <span class="step-title">Rapid Blast Freezing</span>
-        </button>
-        <button class="ops-btn" onclick="loadZone(2, this)">
-          <span class="step-num">Zone 03 / Preparation</span>
-          <span class="step-title">Controlled Thawing</span>
-        </button>
-        <button class="ops-btn" onclick="loadZone(3, this)">
-          <span class="step-num">Zone 04 / Distribution</span>
-          <span class="step-title">Fleet Loading Docks</span>
-        </button>
+  <!-- Clear Message / Operational Solutions Sections -->
+  <section class="solutions-container">
+    
+    <!-- Solution 1 -->
+    <div class="solution-row">
+      <div class="solution-content">
+        <h2>Multi-Temperature Storage & Warehousing</h2>
+        <p>State-of-the-art cold storage facilities situated in Port Klang[cite: 1], operating seamlessly from chilled environments down to -25°C. Designed to accommodate food, beverage, and pharmaceutical products with rigorous inventory control[cite: 4, 6].</p>
+        <ul class="solution-features">
+          <li>Automated Warehouse Management Systems (WMS) for real-time tracking</li>
+          <li>Strict FEFO and FIFO batch rotation protocols</li>
+          <li>JAKIM Halal, HACCP, and ISO 22000 certified standards</li>
+        </ul>
       </div>
-
-      <!-- Live Interactive Stage -->
-      <div class="ops-stage">
-        <div class="ops-viewscreen" id="zone-photo" style="--photo-url:url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1500&q=85')">
-          <div class="ops-badge" id="zone-temp">STATUS: ACTIVE (-25°C TO +15°C)</div>
-        </div>
-        <div class="ops-details">
-          <div class="ops-info">
-            <h3 id="zone-title">Multi-Temperature Storage Vaults</h3>
-            <p id="zone-desc">Automated cold storage chambers featuring dedicated temperature zones built specifically for perishables, pharmaceuticals, and deep-frozen inventory.</p>
-            <p id="zone-extra">Integrated directly with our automated Warehouse Management System (WMS) for absolute batch tracing, FEFO/FIFO rotation control, and live telemetry reporting.</p>
-          </div>
-          <div class="ops-specs">
-            <div class="spec-item">
-              <span>Capacity</span>
-              <strong id="spec-1">26,000 Pallets</strong>
-            </div>
-            <div class="spec-item">
-              <span>WMS Tracking</span>
-              <strong id="spec-2">Real-Time Batch ID</strong>
-            </div>
-            <div class="spec-item">
-              <span>Certification</span>
-              <strong id="spec-3">HACCP / ISO 22000</strong>
-            </div>
-            <div class="spec-item">
-              <span>Halal Status</span>
-              <strong id="spec-4">JAKIM Accredited</strong>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="solution-image-box" style="--img-url:url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1200&q=80')"></div>
     </div>
+
+    <!-- Solution 2 -->
+    <div class="solution-row">
+      <div class="solution-content">
+        <h2>Refrigerated Transportation & Distribution</h2>
+        <p>A dependable, GPS-monitored fleet of refrigerated trucks providing seamless distribution across Peninsular Malaysia, backed by reliable cross-border capabilities into Singapore and Thailand.</p>
+        <ul class="solution-features">
+          <li>Continuous temperature loggers and real-time GPS tracking</li>
+          <li>Maintained thermal chain integrity from loading dock to delivery point</li>
+          <li>Experienced drivers trained in cold chain handling guidelines</li>
+        </ul>
+      </div>
+      <div class="solution-image-box" style="--img-url:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80')"></div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div class="solution-row">
+      <div class="solution-content">
+        <h2>Blast Freezing & Value-Added Services</h2>
+        <p>Specialized processing support including high-capacity blast freezing for rapid core temperature pull-down, controlled thawing rooms, and full container plug-in and handling services.</p>
+        <ul class="solution-features">
+          <li>Rapid blast freezing tunnels for maximum freshness retention</li>
+          <li>Controlled thawing chambers designed to minimize drip loss</li>
+          <li>Custom repacking, labeling, and container clearance support</li>
+        </ul>
+      </div>
+      <div class="solution-image-box" style="--img-url:url('https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=1200&q=80')"></div>
+    </div>
+
   </section>
 
-  <!-- Standards & Quality Banner -->
-  <section class="standards-banner">
-    <span class="eyebrow" style="color:#E2E8F0">Quality Guarantee</span>
-    <h2 style="margin:0;font-size:32px;font-weight:700">Rigorously Certified Facilities</h2>
-    <div class="standards-grid">
-      <div class="standard-card">
-        <h4>JAKIM Halal Certified</h4>
-        <p>Complete segregation and dedicated Halal logistics procedures ensuring uncompromised religious integrity across all storage zones.</p>
-      </div>
-      <div class="standard-card">
-        <h4>Continuous Monitoring</h4>
-        <p>Automated sensor arrays sample ambient temperatures continuously with instant alarm triggers for any variance.</p>
-      </div>
-      <div class="standard-card">
-        <h4>End-to-End Traceability</h4>
-        <p>Digital barcode integration tracking every SKU from container discharge through dock loading.</p>
-      </div>
+  <!-- Clean Inquiry / Quote Form Section -->
+  <section class="inquiry-section" id="quote">
+    <div class="inquiry-info">
+      <h2>Ready to Discuss Your Cold Chain Requirements?</h2>
+      <p>Submit your inquiry or request a custom quote directly to our customer service team. We respond promptly with tailored solutions for your storage and transport needs.</p>
     </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta">
-    <div>
-      <h2>Require Custom Cold Storage Specs?</h2>
-      <p>Connect with our technical operations team to review your temperature and inventory requirements.</p>
-    </div>
-    <a href="mailto:customer.service@ilm-my.com" class="btn accent">Consult Our Specialists</a>
+    <form class="inquiry-form" onsubmit="event.preventDefault(); alert('Thank you for your inquiry. Our team will contact you shortly.');">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="message">Your Inquiry / Details</label>
+        <textarea id="message" required placeholder="Describe your storage or transportation needs..."></textarea>
+      </div>
+      <button type="submit" class="btn primary">Submit Inquiry</button>
+    </form>
   </section>
 </main>
 
@@ -428,65 +359,11 @@ img{max-width:100%;display:block}
     <p>Port Klang, Selangor, Malaysia<br>Email: customer.service@ilm-my.com<br>Phone: +(6)03-3168 9626</p>
   </div>
   <div class="footer-links">
-    <a href="index.html#solutions">Solutions</a>
-    <a href="index.html#facility">Facility</a>
-    <a href="index.html#values">Why IGLO</a>
+    <a href="index.html">Home</a>
+    <a href="solutions.html">Solutions</a>
     <a href="index.html#contact">Contact</a>
   </div>
 </footer>
 
-<script>
-const zoneData = [
-  {
-    title: "Multi-Temperature Storage Vaults",
-    desc: "Automated cold storage chambers featuring dedicated temperature zones built specifically for perishables, pharmaceuticals, and deep-frozen inventory.",
-    extra: "Integrated directly with our automated Warehouse Management System (WMS) for absolute batch tracing, FEFO/FIFO rotation control, and live telemetry reporting.",
-    temp: "STATUS: ACTIVE (-25°C TO +15°C)",
-    photo: "url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1500&q=85')",
-    specs: ["26,000 Pallets", "Real-Time Batch ID", "HACCP / ISO 22000", "JAKIM Accredited"]
-  },
-  {
-    title: "Rapid Blast Freezing Tunnel",
-    desc: "High-capacity blast freezing technology engineered for rapid thermal pull-down, preserving product cellular structure and nutritional integrity.",
-    extra: "Customized airflow velocity and deep freezing protocols designed to transition high volumes of fresh cargo into stable frozen states safely.",
-    temp: "STATUS: ACTIVE (-35°C PULL-DOWN)",
-    photo: "url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1500&q=85')",
-    specs: ["High Pull-Down Speed", "Cellular Preservation", "Automated Timing", "Food Safety Standard"]
-  },
-  {
-    title: "Staged Controlled Thawing Rooms",
-    desc: "Specialized temperature and humidity-controlled chambers for uniform product defrosting without moisture loss or quality degradation.",
-    extra: "Reduces drip loss and maintains optimal texture for large-scale commercial food processing clients.",
-    temp: "STATUS: CONTROLLED (+2°C TO +8°C)",
-    photo: "url('https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=1500&q=85')",
-    specs: ["Controlled Humidity", "Zero Drip Loss", "Customized Cycles", "Strict Hygiene Protocols"]
-  },
-  {
-    title: "Sealed Fleet Loading Docks",
-    desc: "Air-curtained and temperature-controlled loading bays engineered to eliminate cold chain breaks during transfer into refrigerated trailers.",
-    extra: "Equipped with GPS tracking and active reefer monitoring across Peninsular Malaysia and cross-border routes to Singapore and Thailand.",
-    temp: "STATUS: DOCK DISPATCH (+4°C ANTECHAMBER)",
-    photo: "url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1500&q=85')",
-    specs: ["Air-Curtain Seals", "GPS Fleet Tracking", "Cross-Border Ready", "Zero Thermal Break"]
-  }
-];
-
-function loadZone(idx, el) {
-  document.querySelectorAll('.ops-btn').forEach(btn => btn.classList.remove('active'));
-  el.classList.add('active');
-  
-  const z = zoneData[idx];
-  document.getElementById('zone-title').textContent = z.title;
-  document.getElementById('zone-desc').textContent = z.desc;
-  document.getElementById('zone-extra').textContent = z.extra;
-  document.getElementById('zone-temp').textContent = z.temp;
-  document.getElementById('zone-photo').style.setProperty('--photo-url', z.photo);
-  
-  document.getElementById('spec-1').textContent = z.specs[0];
-  document.getElementById('spec-2').textContent = z.specs[1];
-  document.getElementById('spec-3').textContent = z.specs[2];
-  document.getElementById('spec-4').textContent = z.specs[3];
-}
-</script>
 </body>
 </html>

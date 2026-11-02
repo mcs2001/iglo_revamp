@@ -72,36 +72,16 @@ img{max-width:100%;display:block}
 .nav a.active{color:var(--brand-blue);font-weight:700}
 .menu{display:none;border:1px solid var(--border-color);background:var(--white);width:40px;height:40px;font-size:20px;cursor:pointer;border-radius:var(--radius-sm)}
 
-/* Hero Header Section */
-.page-header{
-  padding:70px 8vw 40px;
-  background:var(--bg-light);
-  border-bottom:1px solid var(--border-color);
-}
-.page-header h1{
-  margin:0 0 16px;
-  color:var(--dark-blue-deep);
-  font-size:clamp(36px, 4vw, 48px);
-  font-weight:700;
-  line-height:1.15;
-}
-.page-header p{
-  margin:0;
-  color:var(--text-muted);
-  font-size:18px;
-  max-width:700px;
-}
-
-/* Overlapping Left Card Hero Banner (Lineage Style Opposite Layout) */
+/* Overlapping Left Card Hero Banner (Solutions Copy Inside White Box) */
 .solutions-hero-banner{
   position:relative;
-  min-height:600px;
+  min-height:640px;
   background:url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
   display:flex;
   align-items:center;
   padding:60px 8vw;
 }
-/* Brand Overlay Tint (#005581 @ 45%) */
+/* Brand Overlay Tint (#005581 @ 45%)[cite: 20] */
 .solutions-hero-banner::before{
   content:"";
   position:absolute;
@@ -115,7 +95,7 @@ img{max-width:100%;display:block}
   z-index:2;
   background:var(--white);
   width:100%;
-  max-width:540px;
+  max-width:580px;
   padding:50px 44px;
   box-shadow:0 20px 40px rgba(0, 0, 0, 0.15);
   border-radius:var(--radius-sm);
@@ -129,23 +109,43 @@ img{max-width:100%;display:block}
   display:block;
   margin-bottom:12px;
 }
-.left-card h2{
+.left-card h1{
   margin:0 0 16px;
   color:var(--dark-blue-deep);
-  font-size:32px;
+  font-size:clamp(32px, 3.5vw, 42px);
   font-weight:700;
   line-height:1.2;
 }
 .left-card p{
-  margin:0 0 28px;
+  margin:0 0 24px;
   color:var(--text-muted);
   font-size:16px;
   line-height:1.6;
 }
+.card-solutions-list{
+  list-style:none;
+  padding:0;
+  margin:0 0 28px;
+  display:grid;
+  gap:10px;
+}
+.card-solutions-list li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--text-main);
+}
+.card-solutions-list li::before{
+  content:"✓";
+  color:var(--brand-teal);
+  font-weight:700;
+}
+
 .left-card-links{
   display:flex;
-  flex-direction:column;
-  gap:12px;
+  gap:20px;
 }
 .card-link{
   color:var(--dark-blue-deep);
@@ -155,10 +155,9 @@ img{max-width:100%;display:block}
   letter-spacing:0.05em;
   display:inline-flex;
   align-items:center;
-  gap:8px;
+  gap:6px;
   border-bottom:2px solid var(--brand-teal);
   padding-bottom:4px;
-  width:fit-content;
   transition:var(--transition);
 }
 .card-link:hover{
@@ -233,10 +232,10 @@ img{max-width:100%;display:block}
   background:rgba(2, 58, 87, 0.35); /* Brand Overlay Tint */
 }
 
-/* Inquiry Section (Brand Blue Background & Brand Green Button) */
+/* Inquiry Section (Brand Blue BG & Brand Green Button) */
 .inquiry-section{
   padding:90px 8vw;
-  background:var(--brand-blue);
+  background:var(--brand-blue); /* Brand Blue #0072AE[cite: 11] */
   color:var(--white);
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -307,7 +306,7 @@ img{max-width:100%;display:block}
   transition:var(--transition);
 }
 .btn.submit-btn{
-  background:var(--brand-green);
+  background:var(--brand-green); /* Brand Green #53BB48[cite: 11] */
   color:var(--white);
   width:100%;
 }
@@ -357,21 +356,22 @@ img{max-width:100%;display:block}
 </header>
 
 <main>
-  <!-- Page Header -->
-  <section class="page-header">
-    <h1>Solutions</h1>
-    <p>Comprehensive, temperature-controlled cold chain logistics solutions engineered to protect product integrity from origin to destination across Malaysia and Southeast Asia.</p>
-  </section>
-
-  <!-- Lineage-Style Left-Aligned Overlapping White Box Hero -->
+  <!-- Lineage-Style Left-Aligned Overlapping White Box Hero containing Solutions message -->
   <section class="solutions-hero-banner">
     <div class="left-card">
-      <span class="card-category">Integrated Infrastructure</span>
-      <h2>Count on a more connected cold chain</h2>
-      <p>Our strategically located cold chain hub in Port Klang provides seamless integration between multi-temperature storage, blast freezing, and nationwide refrigerated transport for food, beverage, and pharmaceutical leaders[cite: 1, 4].</p>
+      <span class="card-category">Total Cold Chain Solutions</span>
+      <h1>Count on a more connected cold chain</h1>
+      <p>Comprehensive, temperature-controlled logistics solutions engineered to protect product integrity from origin to destination across Malaysia and Southeast Asia.</p>
+      
+      <ul class="card-solutions-list">
+        <li>Multi-Temperature Storage & Warehousing (-25°C to +15°C)[cite: 4]</li>
+        <li>GPS-Monitored Refrigerated Transportation & Fleet</li>
+        <li>Rapid Blast Freezing & Controlled Thawing Rooms</li>
+      </ul>
+
       <div class="left-card-links">
         <a href="#services-detail" class="card-link">Explore Capabilities ▶</a>
-        <a href="#quote" class="card-link">Request Custom Quote ▶</a>
+        <a href="#quote" class="card-link">Request Quote ▶</a>
       </div>
     </div>
   </section>

@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Facilities | IGLO Malaysia</title>
+<meta name="description" content="Explore IGLO's state-of-the-art cold storage facilities, multi-temperature zones, blast freezing units, and Port Klang logistics hub." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Primary Brand Palette */
+  --brand-blue: #0072AE;
+  --brand-teal: #009F93;
+  --brand-green: #53BB48;
+  
+  /* Secondary Dark Palette */
+  --dark-blue-light: #005581;
+  --dark-blue-mid: #023A57;
+  --dark-blue-deep: #072232;
+  
+  /* Neutrals & UI */
+  --bg-light: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --border-color: #E2E8F0;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --white: #FFFFFF;
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --transition: all 0.25s ease-in-out;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Roboto", Arial, sans-serif;
+  color:var(--text-main);
+  background:var(--white);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* Header & Nav */
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 8vw;
+  background:rgba(255, 255, 255, 0.96);
+  border-bottom:1px solid var(--border-color);
+  backdrop-filter:blur(10px);
+}
+.logo{display:flex;align-items:center}
+.logo-img{height:42px;width:auto;min-width:120px;object-fit:contain}
+.nav{
+  display:flex;
+  gap:32px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--text-main);
+}
+.nav a{transition:var(--transition);position:relative}
+.nav a:hover{color:var(--brand-blue)}
+.nav a.active{color:var(--brand-blue);font-weight:700}
+.menu{display:none;border:1px solid var(--border-color);background:var(--white);width:40px;height:40px;font-size:20px;cursor:pointer;border-radius:var(--radius-sm)}
+
+/* Hero Banner (White Box Overlay on Left) */
+.facility-hero-banner{
+  position:relative;
+  min-height:640px;
+  background:url("https://images.unsplash.com/photo-1627309366653-2dedc084cdf1?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:60px 8vw;
+}
+.facility-hero-banner::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0, 85, 129, 0.45);
+}
+
+.left-card{
+  position:relative;
+  z-index:2;
+  background:var(--white);
+  width:100%;
+  max-width:580px;
+  padding:50px 44px;
+  box-shadow:0 20px 40px rgba(0, 0, 0, 0.15);
+  border-radius:var(--radius-sm);
+}
+.left-card .card-category{
+  color:var(--brand-blue);
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  display:block;
+  margin-bottom:12px;
+}
+.left-card h1{
+  margin:0 0 16px;
+  color:var(--dark-blue-deep);
+  font-size:clamp(32px, 3.5vw, 42px);
+  font-weight:700;
+  line-height:1.2;
+}
+.left-card p{
+  margin:0 0 24px;
+  color:var(--text-muted);
+  font-size:16px;
+  line-height:1.6;
+}
+.card-stats-list{
+  list-style:none;
+  padding:0;
+  margin:0 0 28px;
+  display:grid;
+  gap:10px;
+}
+.card-stats-list li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--text-main);
+}
+.card-stats-list li::before{
+  content:"✓";
+  color:var(--brand-teal);
+  font-weight:700;
+}
+.left-card-links{
+  display:flex;
+  gap:20px;
+}
+.card-link{
+  color:var(--dark-blue-deep);
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  border-bottom:2px solid var(--brand-teal);
+  padding-bottom:4px;
+  transition:var(--transition);
+}
+.card-link:hover{
+  color:var(--brand-blue);
+  border-color:var(--brand-blue);
+}
+
+/* Facility Overview Stats Strip */
+.stats-strip{
+  background:var(--bg-light);
+  border-bottom:1px solid var(--border-color);
+  padding:40px 8vw;
+}
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:32px;
+}
+.stat-box{
+  border-left:3px solid var(--brand-blue);
+  padding-left:20px;
+}
+.stat-box strong{
+  display:block;
+  font-size:32px;
+  font-weight:700;
+  color:var(--dark-blue-deep);
+  line-height:1;
+}
+.stat-box span{
+  display:block;
+  font-size:13px;
+  font-weight:700;
+  color:var(--brand-teal);
+  text-transform:uppercase;
+  margin-top:6px;
+}
+.stat-box p{
+  margin:4px 0 0;
+  font-size:13px;
+  color:var(--text-muted);
+}
+
+/* Facility Zones Interactive Showcase */
+.facility-showcase{
+  padding:90px 8vw;
+  background:var(--white);
+}
+.section-header{
+  margin-bottom:48px;
+}
+.section-header h2{
+  margin:0 0 12px;
+  font-size:32px;
+  font-weight:700;
+  color:var(--dark-blue-deep);
+}
+.section-header p{
+  margin:0;
+  font-size:16px;
+  color:var(--text-muted);
+  max-width:640px;
+}
+
+.zones-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:32px;
+}
+.zone-card{
+  border:1px solid var(--border-color);
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  background:var(--white);
+  transition:var(--transition);
+}
+.zone-card:hover{
+  border-color:var(--brand-blue);
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(0,0,0,0.06);
+}
+.zone-img{
+  height:240px;
+  position:relative;
+  background:var(--bg) center/cover no-repeat;
+}
+.zone-img::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(2, 58, 87, 0.35);
+}
+.zone-temp-tag{
+  position:absolute;
+  bottom:16px;
+  left:16px;
+  background:var(--dark-blue-deep);
+  color:var(--white);
+  padding:6px 14px;
+  font-size:12px;
+  font-weight:700;
+  border-radius:var(--radius-sm);
+  z-index:2;
+}
+.zone-body{
+  padding:28px;
+}
+.zone-body h3{
+  margin:0 0 10px;
+  font-size:20px;
+  font-weight:700;
+  color:var(--dark-blue-deep);
+}
+.zone-body p{
+  margin:0 0 16px;
+  font-size:14px;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+.zone-specs{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:8px;
+  border-top:1px solid var(--border-color);
+  padding-top:16px;
+}
+.zone-specs li{
+  font-size:13px;
+  color:var(--text-main);
+  display:flex;
+  justify-content:space-between;
+}
+.zone-specs li span{color:var(--text-muted)}
+.zone-specs li strong{color:var(--dark-blue-deep);font-weight:700}
+
+/* Strategic Location Map Block */
+.location-section{
+  padding:90px 8vw;
+  background:var(--bg-light);
+  border-top:1px solid var(--border-color);
+  border-bottom:1px solid var(--border-color);
+}
+.location-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.location-info h2{
+  margin:0 0 16px;
+  font-size:32px;
+  font-weight:700;
+  color:var(--dark-blue-deep);
+}
+.location-info p{
+  margin:0 0 24px;
+  font-size:16px;
+  color:var(--text-muted);
+  line-height:1.7;
+}
+.access-points{
+  display:grid;
+  gap:16px;
+}
+.access-item{
+  display:flex;
+  gap:16px;
+  padding:16px 20px;
+  background:var(--white);
+  border:1px solid var(--border-color);
+  border-radius:var(--radius-sm);
+}
+.access-icon{
+  color:var(--brand-teal);
+  font-weight:700;
+  font-size:18px;
+}
+.access-item h4{
+  margin:0 0 2px;
+  font-size:15px;
+  color:var(--dark-blue-deep);
+  font-weight:700;
+}
+.access-item p{
+  margin:0;
+  font-size:13px;
+  color:var(--text-muted);
+}
+
+.map-visual{
+  position:relative;
+  height:400px;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  background:url("https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80") center/cover no-repeat;
+}
+.map-visual::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0, 85, 129, 0.4);
+}
+.map-badge{
+  position:absolute;
+  bottom:24px;
+  left:24px;
+  background:var(--white);
+  padding:16px 20px;
+  border-radius:var(--radius-sm);
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  z-index:2;
+}
+.map-badge strong{display:block;color:var(--dark-blue-deep);font-size:16px}
+.map-badge span{color:var(--text-muted);font-size:12px}
+
+/* Clean Inquiry Section (Brand Blue BG & Brand Green Button) */
+.inquiry-section{
+  padding:90px 8vw;
+  background:var(--brand-blue);
+  color:var(--white);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.inquiry-info h2{
+  margin:0 0 16px;
+  font-size:36px;
+  font-weight:700;
+  color:var(--white);
+}
+.inquiry-info p{
+  margin:0;
+  color:rgba(255,255,255,0.9);
+  font-size:16px;
+  line-height:1.6;
+}
+
+.inquiry-form{
+  background:var(--white);
+  padding:40px;
+  border-radius:var(--radius-md);
+  color:var(--text-main);
+  display:grid;
+  gap:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.form-group label{
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  color:var(--dark-blue-deep);
+}
+.form-group input,
+.form-group textarea{
+  padding:12px 16px;
+  border:1px solid var(--border-color);
+  border-radius:var(--radius-sm);
+  font-family:inherit;
+  font-size:15px;
+  outline:none;
+  transition:var(--transition);
+}
+.form-group input:focus,
+.form-group textarea:focus{
+  border-color:var(--brand-blue);
+}
+.form-group textarea{resize:vertical;height:100px}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:48px;
+  padding:0 28px;
+  border-radius:var(--radius-sm);
+  font-size:14px;
+  font-weight:700;
+  text-transform:uppercase;
+  border:none;
+  cursor:pointer;
+  transition:var(--transition);
+}
+.btn.submit-btn{
+  background:var(--brand-green);
+  color:var(--white);
+  width:100%;
+}
+.btn.submit-btn:hover{
+  background:#44a339;
+}
+
+/* Footer (Matching Solutions Page) */
+.footer{
+  padding:48px 8vw;
+  background:#051824;
+  color:rgba(255,255,255,0.7);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  font-size:14px;
+}
+.footer p{margin:8px 0 0;line-height:1.6}
+.footer-links{display:flex;gap:24px;justify-content:flex-end;color:var(--white);font-weight:500}
+.footer-links a:hover{color:var(--brand-teal)}
+
+/* Responsive */
+@media(max-width:960px){
+  .nav{display:none}
+  .menu{display:block}
+  .facility-hero-banner{padding:40px 6vw}
+  .left-card{max-width:100%;padding:32px 24px}
+  .stats-grid,.zones-grid,.location-grid,.inquiry-section,.footer{grid-template-columns:1fr;gap:40px}
+  .footer-links{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="index.html">
+    <img src="IGLO_Logo_FC(RGB).png" alt="IGLO Logo" class="logo-img" />
+  </a>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="facilities.html" class="active">Facilities</a>
+    <a href="index.html#values">Why IGLO</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <button class="menu" aria-label="Toggle Navigation">☰</button>
+</header>
+
+<main>
+  <!-- Overlapping Left Card Hero Banner -->
+  <section class="facility-hero-banner">
+    <div class="left-card">
+      <span class="card-category">Cold Storage Infrastructure</span>
+      <h1>Facilities</h1>
+      <p>State-of-the-art multi-temperature warehousing complex strategically positioned in Port Klang, featuring certified Halal zones, automated WMS tracking, and 26,000+ pallet capacity.</p>
+      
+      <ul class="card-stats-list">
+        <li>Port Klang Logistics Complex (Westports & Northport access)</li>
+        <li>Phase 1 & Phase 2 Expansion (Up to 26,000 Pallet Positions)</li>
+        <li>Multi-Temp Range (-25°C Deep Freeze to +15°C Ambient)</li>
+      </ul>
+
+      <div class="left-card-links">
+        <a href="#zones" class="card-link">Explore Facility Zones ▶</a>
+        <a href="#quote" class="card-link">Book Storage Space ▶</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Metrics Strip -->
+  <section class="stats-strip">
+    <div class="stats-grid">
+      <div class="stat-box">
+        <strong>26,000</strong>
+        <span>Pallet Positions</span>
+        <p>Phase 1 & Phase 2 capacity</p>
+      </div>
+      <div class="stat-box">
+        <strong>-25°C to +15°C</strong>
+        <span>Temperature Range</span>
+        <p>Precision multi-zone control</p>
+      </div>
+      <div class="stat-box">
+        <strong>100%</strong>
+        <span>Halal Segregation</span>
+        <p>JAKIM accredited facility</p>
+      </div>
+      <div class="stat-box">
+        <strong>24 / 7</strong>
+        <span>WMS Telemetry</span>
+        <p>Real-time batch tracking</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facility Zones Showcase -->
+  <section class="facility-showcase" id="zones">
+    <div class="section-header">
+      <h2>Specialized Operational Zones</h2>
+      <p>Custom-built chambers engineered to maintain continuous thermal control, humidity stability, and strict product segregation across all storage stages.</p>
+    </div>
+
+    <div class="zones-grid">
+      <!-- Zone 1 -->
+      <article class="zone-card">
+        <div class="zone-img" style="--bg:url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=800&q=80')">
+          <span class="zone-temp-tag">-18°C TO -25°C</span>
+        </div>
+        <div class="zone-body">
+          <h3>Deep Frozen Vaults</h3>
+          <p>High-density racking vaults equipped with automated continuous temperature monitoring for frozen meats, seafood, ice cream, and perishables.</p>
+          <ul class="zone-specs">
+            <li><span>Racking System:</span> <strong>Selective & Drive-In</strong></li>
+            <li><span>Monitoring:</span> <strong>Automated Dual Sensors</strong></li>
+            <li><span>Compliance:</span> <strong>JAKIM Halal & HACCP</strong></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Zone 2 -->
+      <article class="zone-card">
+        <div class="zone-img" style="--bg:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80')">
+          <span class="zone-temp-tag">+2°C TO +8°C</span>
+        </div>
+        <div class="zone-body">
+          <h3>Chilled & Fresh Rooms</h3>
+          <p>Precision humidity-controlled environments tailored for dairy, fresh produce, beverages, and temperature-sensitive pharmaceutical inventory.</p>
+          <ul class="zone-specs">
+            <li><span>Humidity Control:</span> <strong>Active Relative Control</strong></li>
+            <li><span>Airflow:</span> <strong>Gentle Indirect Circulation</strong></li>
+            <li><span>Air Locks:</span> <strong>Sealed Antechambers</strong></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Zone 3 -->
+      <article class="zone-card">
+        <div class="zone-img" style="--bg:url('https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=800&q=80')">
+          <span class="zone-temp-tag">-35°C RAPID PULL-DOWN</span>
+        </div>
+        <div class="zone-body">
+          <h3>Blast Freezing Chambers</h3>
+          <p>High-velocity air circulation tunnels engineered for rapid core temperature pull-down, locking in freshness and preventing cellular degradation.</p>
+          <ul class="zone-specs">
+            <li><span>Freezing Speed:</span> <strong>Rapid Core Pull-Down</strong></li>
+            <li><span>Capacity:</span> <strong>High-Volume Tunnels</strong></li>
+            <li><span>Turnaround:</span> <strong>Scheduled Batches</strong></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Strategic Location Section -->
+  <section class="location-section">
+    <div class="location-grid">
+      <div class="location-info">
+        <h2>Strategically Located in Port Klang</h2>
+        <p>Our primary facility complex is located in Malaysia's premier maritime hub, providing immediate access to Westports, Northport, and major Peninsular expressways for fast import/export clearance and distribution.</p>
+        
+        <div class="access-points">
+          <div class="access-item">
+            <span class="access-icon">📍</span>
+            <div>
+              <h4>Immediate Port Proximity</h4>
+              <p>Direct connectivity to Westports and Northport container terminals.</p>
+            </div>
+          </div>
+          <div class="access-item">
+            <span class="access-icon">🚛</span>
+            <div>
+              <h4>Highway Connectivity</h4>
+              <p>Instant access to KESAS, SKVE, and Federal Highway networks.</p>
+            </div>
+          </div>
+          <div class="access-item">
+            <span class="access-icon">🌐</span>
+            <div>
+              <h4>Cross-Border Logistics Hub</h4>
+              <p>Seamless staging point for transport to Singapore and Thailand.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-visual">
+        <div class="map-badge">
+          <strong>IGLO Cold Chain Complex</strong>
+          <span>Port Klang, Selangor, Malaysia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clean Inquiry Section (Matching Solutions Page) -->
+  <section class="inquiry-section" id="quote">
+    <div class="inquiry-info">
+      <h2>Ready to Reserve Facility Space?</h2>
+      <p>Connect with our warehouse operations team to discuss pallet allocations, temperature requirements, or custom processing services.</p>
+    </div>
+    <form class="inquiry-form" onsubmit="event.preventDefault(); alert('Thank you for your inquiry. Our operations team will contact you shortly.');">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="message">Your Facility / Storage Needs</label>
+        <textarea id="message" required placeholder="Describe your pallet volume, temperature zone, or storage timeline..."></textarea>
+      </div>
+      <button type="submit" class="btn submit-btn">Submit Inquiry</button>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <div>
+    <strong style="color:var(--white);font-size:18px">ILM Logistics (M) Sdn Bhd (IGLO)</strong>
+    <p>Port Klang, Selangor, Malaysia<br>Email: customer.service@ilm-my.com<br>Phone: +(6)03-3168 9626</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

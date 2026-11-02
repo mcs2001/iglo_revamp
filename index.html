@@ -2,139 +2,571 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>IGLO | Total Cold Chain Logistics Solutions Malaysia</title>
 <meta name="description" content="Malaysia's pioneer in cold chain logistics. IGLO provides multi-temperature cold storage, blast freezing, refrigerated transport, and end-to-end supply chain solutions." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#006eb8;--navy:#071825;--deep:#0b2335;--lime:#009f93;--ice:#f4f9fc;--pale:#e8f5fb;--line:#d7e4ec;--text:#263746;--muted:#05853b;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Roboto",Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.55;overflow-x:hidden}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+:root {
+  /* Primary Brand Palette */
+  --brand-blue: #0072AE;
+  --brand-teal: #009F93;
+  --brand-green: #53BB48;
+  
+  /* Secondary Dark Palette */
+  --dark-blue-light: #005581;
+  --dark-blue-mid: #023A57;
+  --dark-blue-deep: #072232;
+  
+  /* Neutrals & UI */
+  --bg-light: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --border-color: #E2E8F0;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --white: #FFFFFF;
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --transition: all 0.25s ease-in-out;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Roboto", Arial, sans-serif;
+  color:var(--text-main);
+  background:var(--white);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
 
 /* Header & Nav */
-.header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(16px);transition:all 0.3s ease}
-.logo{display:flex;align-items:center;gap:12px;color:var(--navy);font-size:28px;font-weight:900;transition:transform 0.3s ease}.logo:hover{transform:scale(1.05)}
-.logo-img{height:42px;width:auto}
-.nav{display:flex;gap:28px;font-size:13px;font-weight:900;text-transform:uppercase;color:var(--navy)}.nav a{transition:color 0.2s ease, transform 0.2s ease;display:inline-block}.nav a:hover{color:var(--blue);transform:translateY(-2px)}
-.menu{display:none;border:1px solid var(--line);background:#fff;width:44px;height:44px;font-size:22px;cursor:pointer;border-radius:8px;transition:background 0.2s ease}
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 6vw;
+  background:rgba(255, 255, 255, 0.96);
+  border-bottom:1px solid var(--border-color);
+  backdrop-filter:blur(10px);
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:900;
+}
+.logo-img{height:36px;width:auto}
+.nav{
+  display:flex;
+  gap:32px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--text-main);
+}
+.nav a{
+  transition:var(--transition);
+  position:relative;
+}
+.nav a:hover{
+  color:var(--brand-blue);
+}
+.nav a::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;
+  left:0;
+  width:0%;
+  height:2px;
+  background:var(--brand-blue);
+  transition:var(--transition);
+}
+.nav a:hover::after{
+  width:100%;
+}
+.menu{
+  display:none;
+  border:1px solid var(--border-color);
+  background:var(--white);
+  width:40px;
+  height:40px;
+  font-size:20px;
+  cursor:pointer;
+  border-radius:var(--radius-sm);
+}
 
 /* Hero Section */
-.hero{min-height:720px;display:grid;grid-template-columns:1.05fr .95fr;background:linear-gradient(135deg,var(--ice),#fff);overflow:hidden}
-.hero-copy{padding:96px 5vw 80px;display:flex;flex-direction:column;justify-content:center}.eyebrow{margin:0 0 16px;color:var(--blue);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;display:inline-block}
-.hero h1{margin:0;max-width:760px;color:var(--navy);font-size:clamp(44px,6.5vw,96px);line-height:.92;font-weight:900}.hero p{max-width:610px;margin:26px 0 0;color:var(--muted);font-size:20px}
+.hero{
+  min-height:80vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  background:linear-gradient(180deg, var(--bg-light) 0%, #FFFFFF 100%);
+}
+.hero-copy{
+  padding:60px 6vw;
+}
+.eyebrow{
+  color:var(--brand-teal);
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  margin-bottom:12px;
+  display:block;
+}
+.hero h1{
+  margin:0;
+  color:var(--dark-blue-deep);
+  font-size:clamp(36px, 4vw, 56px);
+  line-height:1.15;
+  font-weight:700;
+}
+.hero p{
+  margin:20px 0 32px;
+  color:var(--text-muted);
+  font-size:18px;
+  font-weight:400;
+  max-width:540px;
+}
 
 /* Buttons */
-.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;font-size:13px;font-weight:900;text-transform:uppercase;border:2px solid transparent;cursor:pointer;transition:all .3s cubic-bezier(0.25, 0.8, 0.25, 1)}
-.btn.primary{background:var(--blue);color:#fff}.btn.primary:hover{background:#005792;transform:translateY(-4px);box-shadow:0 8px 15px rgba(0,110,184,.3)}
-.btn.accent{background:var(--lime);color:var(--navy)}.btn.accent:hover{background:#aecd25;transform:translateY(-4px);box-shadow:0 8px 15px rgba(0,159,147,.3)}
-.btn.ghost{border-color:var(--blue);color:var(--blue)}.btn.ghost:hover{background:var(--pale);transform:translateY(-4px)}
-
-/* Hero Visuals */
-.hero-visual{position:relative;min-height:520px;background:url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1500&q=85") center/cover}
-.hero-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,24,37,.05),rgba(7,24,37,.58))}
-.panel{position:absolute;left:34px;right:34px;bottom:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.35);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.45);border-radius:22px;overflow:hidden;transition:transform 0.4s ease}
-.panel:hover{transform:translateY(-5px)}
-.panel div{padding:24px;background:rgba(255,255,255,.88);transition:background 0.3s ease}.panel div:hover{background:#fff}
-.panel strong{display:block;color:var(--navy);font-size:34px;line-height:1}.panel span{display:block;margin-top:8px;color:var(--muted);font-size:12px;font-weight:900;text-transform:uppercase}
-
-/* Layout & Typography */
-.section{padding:92px 5vw}.center{text-align:center}.center .section-title,.center .section-copy{margin-left:auto;margin-right:auto}
-.section-title{margin:0;max-width:850px;color:var(--navy);font-size:clamp(34px,4.8vw,72px);line-height:.98;font-weight:900}
-.section-copy{max-width:680px;margin:20px 0 0;color:var(--muted);font-size:18px}
-
-/* Solutions */
-.solutions{background:#fff}.solution-shell{margin-top:52px;display:grid;grid-template-columns:320px 1fr;gap:34px}.solution-menu{display:grid;gap:12px;align-content:start}
-.solution-menu button{padding:22px;border:1px solid var(--line);background:var(--ice);text-align:left;color:var(--navy);font:900 15px Roboto;text-transform:uppercase;border-radius:18px;cursor:pointer;transition:all .3s cubic-bezier(0.25, 0.8, 0.25, 1)}
-.solution-menu button:hover{border-color:var(--blue);transform:translateX(5px)}
-.solution-menu button.active{background:var(--blue);color:#fff;border-color:var(--blue);transform:translateX(10px)}
-
-.solution-detail{min-height:500px;display:grid;grid-template-columns:1fr 1fr;background:var(--navy);border-radius:28px;overflow:hidden;color:#fff}
-.solution-text{padding:48px;display:flex;flex-direction:column;justify-content:end}
-
-/* Dynamic text wrapping for smooth fades */
-.text-wrapper{transition:opacity 0.3s ease, transform 0.3s ease; opacity:1; transform:translateY(0)}
-.text-wrapper.fading{opacity:0; transform:translateY(15px)}
-
-.solution-text h3{margin:0;font-size:clamp(32px,4vw,58px);line-height:.98}.solution-text p{color:rgba(255,255,255,.78);font-size:17px;margin:20px 0 30px}
-
-/* Blob Morph Animation */
-@keyframes morph {
-  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:48px;
+  padding:0 28px;
+  border-radius:var(--radius-sm);
+  font-size:14px;
+  font-weight:500;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:var(--transition);
 }
-.solution-photo{background:var(--photo) center/cover; transition:background 0.5s ease; animation: morph 8s ease-in-out infinite; margin: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3)}
+.btn.primary{
+  background:var(--brand-blue);
+  color:var(--white);
+}
+.btn.primary:hover{
+  background:var(--dark-blue-light);
+  transform:translateY(-1px);
+}
+.btn.ghost{
+  border-color:var(--brand-blue);
+  color:var(--brand-blue);
+  background:transparent;
+}
+.btn.ghost:hover{
+  background:rgba(0, 114, 174, 0.05);
+}
 
-/* Values */
-.band{background:var(--deep);color:#fff}.band .section-title{color:#fff}.band .section-copy{color:rgba(255,255,255,.72)}.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:52px}
-.value{padding:28px;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:rgba(255,255,255,.05);transition:all 0.4s ease}
-.value:hover{background:rgba(255,255,255,.1);transform:translateY(-10px);border-color:var(--lime)}
-.value b{display:block;color:var(--lime);font-size:42px;transition:transform 0.3s ease}.value:hover b{transform:scale(1.1) translateX(5px)}
-.value h3{margin:24px 0 10px;color:#fff;font-size:22px}.value p{margin:0;color:rgba(255,255,255,.72)}
+/* Hero Visual with Brand Overlay */
+.hero-visual{
+  position:relative;
+  height:100%;
+  min-height:480px;
+  background:url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1500&q=85") center/cover;
+}
+/* Brand Manual 5.3: Overlay Tint (#005581 @ 50-60%) */
+.hero-visual::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0, 85, 129, 0.55);
+}
+.panel{
+  position:absolute;
+  bottom:40px;
+  left:40px;
+  right:40px;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  background:var(--white);
+  border-radius:var(--radius-md);
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  overflow:hidden;
+}
+.panel div{
+  padding:20px;
+  border-right:1px solid var(--border-color);
+  text-align:center;
+}
+.panel div:last-child{border-right:none}
+.panel strong{
+  display:block;
+  color:var(--brand-blue);
+  font-size:28px;
+  font-weight:700;
+  line-height:1;
+}
+.panel span{
+  display:block;
+  margin-top:6px;
+  color:var(--text-muted);
+  font-size:12px;
+  font-weight:500;
+  text-transform:uppercase;
+}
 
-/* Facility */
-.facility{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;background:var(--ice)}
-.map-card{min-height:560px;background:linear-gradient(rgba(0,110,184,.08),rgba(7,24,37,.18)),url("https://images.unsplash.com/photo-1627309366653-2dedc084cdf1?auto=format&fit=crop&w=1500&q=85") center/cover; animation: morph 12s ease-in-out infinite alternate-reverse;}
-.checks{display:grid;gap:14px;margin-top:32px}
-.check{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start;padding:18px;border:1px solid var(--line);background:#fff;border-radius:18px;transition:all 0.3s ease}
-.check:hover{transform:translateX(10px);box-shadow:0 10px 20px rgba(0,110,184,0.05);border-color:var(--blue)}
-.check span{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--pale);color:var(--blue);font-weight:900;transition:transform 0.3s ease}.check:hover span{transform:rotate(360deg)}
-.check h3{margin:0 0 4px;color:var(--navy)}.check p{margin:0;color:var(--muted)}
+/* Sections Base */
+.section{padding:90px 6vw}
+.center{text-align:center}
+.center .section-title,.center .section-copy{margin-left:auto;margin-right:auto}
+.section-title{
+  margin:0;
+  color:var(--dark-blue-deep);
+  font-size:clamp(28px, 3vw, 40px);
+  font-weight:700;
+  line-height:1.2;
+}
+.section-copy{
+  max-width:640px;
+  margin:16px 0 0;
+  color:var(--text-muted);
+  font-size:16px;
+}
 
-/* Insights */
-.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
-.news{padding:28px;border:1px solid var(--line);border-radius:24px;background:#fff;transition:all 0.3s ease}
-.news:hover{transform:translateY(-8px);box-shadow:0 15px 30px rgba(0,0,0,0.06)}
-.news time{color:var(--blue);font-size:12px;font-weight:900;text-transform:uppercase}.news h3{color:var(--navy);font-size:24px;line-height:1.12;margin:12px 0 10px}.news p{color:var(--muted);margin:0}
+/* Solutions Section */
+.solutions{background:var(--bg-light)}
+.solution-shell{
+  margin-top:48px;
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:32px;
+}
+.solution-menu{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.solution-menu button{
+  padding:16px 20px;
+  border:1px solid var(--border-color);
+  background:var(--white);
+  text-align:left;
+  color:var(--text-main);
+  font-family:inherit;
+  font-size:15px;
+  font-weight:500;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  transition:var(--transition);
+}
+.solution-menu button:hover{
+  border-color:var(--brand-blue);
+  color:var(--brand-blue);
+}
+.solution-menu button.active{
+  background:var(--brand-blue);
+  color:var(--white);
+  border-color:var(--brand-blue);
+}
 
-/* CTA */
-.cta{padding:86px 5vw;background:linear-gradient(135deg,var(--blue),#004a84);color:#fff;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
-.cta h2{margin:0;font-size:clamp(36px,5vw,74px);line-height:.96}.cta p{max-width:650px;color:rgba(255,255,255,.82);margin:18px 0 0;font-size:18px}
+.solution-detail{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:var(--white);
+  border:1px solid var(--border-color);
+  border-radius:var(--radius-md);
+  overflow:hidden;
+}
+.solution-text{
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.solution-text h3{
+  margin:0 0 12px;
+  color:var(--dark-blue-deep);
+  font-size:24px;
+  font-weight:700;
+}
+.solution-text p{
+  color:var(--text-muted);
+  font-size:15px;
+  margin:0 0 24px;
+}
+.solution-photo-wrap{
+  position:relative;
+  min-height:360px;
+}
+.solution-photo{
+  position:absolute;
+  inset:0;
+  background:var(--photo) center/cover;
+  transition:var(--transition);
+}
+/* Brand Overlay on Photo */
+.solution-photo-wrap::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(2, 58, 87, 0.45);
+  z-index:1;
+}
+
+.text-wrapper{
+  transition:opacity 0.25s ease;
+  opacity:1;
+}
+.text-wrapper.fading{opacity:0}
+
+/* Value Grid Section */
+.band{
+  background:var(--dark-blue-deep);
+  color:var(--white);
+}
+.band .eyebrow{color:var(--brand-teal)}
+.band .section-title{color:var(--white)}
+.band .section-copy{color:rgba(255,255,255,0.7)}
+.value-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:24px;
+  margin-top:48px;
+}
+.value{
+  padding:32px 24px;
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:var(--radius-md);
+  background:rgba(255,255,255,0.02);
+  transition:var(--transition);
+}
+.value:hover{
+  border-color:var(--brand-teal);
+  background:rgba(255,255,255,0.05);
+}
+.value b{
+  display:block;
+  color:var(--brand-teal);
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.value h3{
+  margin:0 0 8px;
+  color:var(--white);
+  font-size:18px;
+  font-weight:700;
+}
+.value p{
+  margin:0;
+  color:rgba(255,255,255,0.7);
+  font-size:14px;
+}
+
+/* Facility Section */
+.facility{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  align-items:center;
+}
+.map-card{
+  position:relative;
+  min-height:440px;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  background:url("https://images.unsplash.com/photo-1627309366653-2dedc084cdf1?auto=format&fit=crop&w=1500&q=85") center/cover;
+}
+.map-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(7, 34, 50, 0.55);
+}
+.checks{
+  display:grid;
+  gap:16px;
+  margin-top:32px;
+}
+.check{
+  display:flex;
+  gap:16px;
+  padding:20px;
+  border:1px solid var(--border-color);
+  background:var(--white);
+  border-radius:var(--radius-sm);
+  transition:var(--transition);
+}
+.check:hover{
+  border-color:var(--brand-blue);
+}
+.check-icon{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:rgba(0, 114, 174, 0.1);
+  color:var(--brand-blue);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:12px;
+  flex-shrink:0;
+}
+.check h3{margin:0 0 4px;color:var(--dark-blue-deep);font-size:16px;font-weight:700}
+.check p{margin:0;color:var(--text-muted);font-size:14px}
+
+/* Insights Section */
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+  margin-top:48px;
+}
+.news{
+  padding:28px;
+  border:1px solid var(--border-color);
+  border-radius:var(--radius-md);
+  background:var(--white);
+  transition:var(--transition);
+}
+.news:hover{
+  border-color:var(--brand-blue);
+  transform:translateY(-2px);
+}
+.news time{
+  color:var(--brand-teal);
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  display:block;
+  margin-bottom:8px;
+}
+.news h3{
+  color:var(--dark-blue-deep);
+  font-size:18px;
+  font-weight:700;
+  line-height:1.3;
+  margin:0 0 10px;
+}
+.news p{
+  color:var(--text-muted);
+  font-size:14px;
+  margin:0;
+}
+
+/* CTA Section */
+.cta{
+  padding:72px 6vw;
+  background:linear-gradient(135deg, var(--brand-blue) 0%, var(--dark-blue-mid) 100%);
+  color:var(--white);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:32px;
+}
+.cta h2{margin:0;font-size:clamp(28px, 3vw, 36px);font-weight:700;line-height:1.2}
+.cta p{margin:12px 0 0;color:rgba(255,255,255,0.8);font-size:16px;max-width:560px}
+.cta .btn.accent{
+  background:var(--brand-green);
+  color:var(--white);
+}
+.cta .btn.accent:hover{
+  background:#44a339;
+}
 
 /* Footer */
-.footer{padding:48px 5vw;background:#06141f;color:rgba(255,255,255,.72);display:grid;grid-template-columns:1fr 1fr;gap:40px}.footer .logo{color:#fff}.footer-links{display:flex;gap:18px;flex-wrap:wrap;align-content:start;justify-content:flex-end;color:#fff;font-size:13px;font-weight:900;text-transform:uppercase}.footer-links a:hover{color:var(--lime)}
+.footer{
+  padding:48px 6vw;
+  background:var(--dark-blue-deep);
+  color:rgba(255,255,255,0.7);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  font-size:14px;
+}
+.footer p{margin:8px 0 0;line-height:1.6}
+.footer-links{
+  display:flex;
+  gap:24px;
+  justify-content:flex-end;
+  color:var(--white);
+  font-weight:500;
+}
+.footer-links a:hover{color:var(--brand-teal)}
 
-/* Scroll Reveal Classes */
-.reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
-.reveal.active { opacity: 1; transform: translateY(0); }
+/* Clean Subtle Scroll Reveal */
+.reveal{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
 
 /* Responsive */
-@media(max-width:980px){.nav{display:none;position:absolute;top:82px;left:0;right:0;flex-direction:column;background:#fff;padding:18px 5vw;border-bottom:1px solid var(--line);box-shadow:0 10px 20px rgba(0,0,0,0.05)}.nav.open{display:flex;animation:slideDown 0.3s ease forwards}.menu{display:block}.hero,.solution-shell,.solution-detail,.facility,.cta,.footer{grid-template-columns:1fr}.hero-copy{padding-top:74px}.panel{position:relative;left:auto;right:auto;bottom:auto;margin:24px}.value-grid,.news-grid{grid-template-columns:1fr 1fr}.solution-photo{min-height:340px}.footer-links{justify-content:flex-start} .solution-menu button.active{transform:translateX(0)}}
-@media(max-width:620px){.hero h1{font-size:44px}.panel,.value-grid,.news-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.section{padding:70px 5vw}.solution-text{padding:30px}.map-card{min-height:360px}}
-
-@keyframes slideDown { from {opacity:0; transform:translateY(-10px)} to {opacity:1; transform:translateY(0)} }
+@media(max-width:960px){
+  .nav{display:none}
+  .menu{display:block}
+  .hero,.solution-shell,.solution-detail,.facility,.cta,.footer{grid-template-columns:1fr}
+  .value-grid,.news-grid{grid-template-columns:1fr 1fr}
+  .hero-visual{min-height:360px}
+  .panel{position:relative;inset:auto;margin:24px;grid-template-columns:repeat(3,1fr)}
+  .cta{flex-direction:column;align-items:flex-start}
+  .footer-links{justify-content:flex-start}
+}
+@media(max-width:640px){
+  .value-grid,.news-grid,.panel{grid-template-columns:1fr}
+  .panel div{border-right:none;border-bottom:1px solid var(--border-color)}
+  .panel div:last-child{border-bottom:none}
+  .section{padding:60px 6vw}
+}
 </style>
 </head>
 <body>
+
 <header class="header">
-  <a class="logo" href="#"><img src="images/SVG/iglo_logo_rgb.svg" alt="IGLO Logo" class="logo-img" /></a>
-  <nav class="nav" id="nav">
+  <a class="logo" href="#">
+    <!-- Primary Logo Wordmark Representation -->
+    <svg width="110" height="32" viewBox="0 0 110 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L2 8V20L12 26L22 20V8L12 2Z" fill="#0072AE"/>
+      <path d="M12 2L22 8V20L12 26V2Z" fill="#009F93"/>
+      <path d="M12 14L2 20V8L12 14Z" fill="#53BB48"/>
+      <text x="30" y="24" font-family="Roboto" font-weight="700" font-size="24" fill="#0072AE">iglo</text>
+    </svg>
+  </a>
+  <nav class="nav">
     <a href="#solutions">Solutions</a>
     <a href="#facility">Facility</a>
     <a href="#values">Why IGLO</a>
     <a href="#insights">Insights</a>
     <a href="#contact">Contact</a>
   </nav>
-  <button class="menu" aria-label="Toggle Navigation" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  <button class="menu" aria-label="Toggle Navigation">☰</button>
 </header>
 
 <main>
 <section class="hero reveal active">
   <div class="hero-copy">
-    <p class="eyebrow">Malaysia's Pioneer in Cold Chain Logistics</p>
+    <span class="eyebrow">Malaysia's Pioneer in Cold Chain Logistics</span>
     <h1>Delivering Cold Chain Solutions and Beyond</h1>
-    <p>With 30 years expertise, IGLO provides integrated, end-to-end cold chain solutions—delivering multi-temperature cold storage, blast freezing, and refrigerated transportation with uncompromising precision.</p>
+    <p>Backed by decades of operational excellence, IGLO provides precise multi-temperature cold storage, blast freezing, and refrigerated transport across Malaysia and Southeast Asia.</p>
     <div class="actions">
-      <a class="btn primary" href="#contact">Start a conversation</a>
-      <a class="btn ghost" href="#solutions">Explore services</a>
+      <a class="btn primary" href="#contact">Start a Conversation</a>
+      <a class="btn ghost" href="#solutions">Explore Services</a>
     </div>
   </div>
   <div class="hero-visual">
     <div class="panel">
-      <div><strong>1996</strong><span>Established Year</span></div>
-      <div><strong>26k</strong><span>Pallet Capacity (Phase 2)</span></div>
+      <div><strong>1996</strong><span>Established</span></div>
+      <div><strong>26k</strong><span>Pallet Capacity</span></div>
       <div><strong>-25°C</strong><span>To +15°C Range</span></div>
     </div>
   </div>
@@ -142,54 +574,60 @@
 
 <section class="section solutions reveal" id="solutions">
   <div class="center">
-    <p class="eyebrow">What We Do</p>
+    <span class="eyebrow">Services & Capabilities</span>
     <h2 class="section-title">Total cold chain solutions for demanding industries.</h2>
-    <p class="section-copy">Strategically situated in Port Klang, IGLO seamlessly bridges warehousing, handling, and nationwide distribution for food, beverage, and pharmaceutical leaders.</p>
+    <p class="section-copy">Strategically situated in Port Klang, IGLO seamlessly bridges warehousing, handling, and distribution for food, beverage, and pharmaceutical partners.</p>
   </div>
+  
   <div class="solution-shell">
     <div class="solution-menu">
       <button class="active" onclick="showSolution(0)">Cold Storage & Warehousing</button>
-      <button onclick="showSolution(1)">Refrigerated Transportation</button>
+      <button onclick="showSolution(1)">Refrigerated Transport</button>
       <button onclick="showSolution(2)">Value-Added Services</button>
     </div>
+    
     <article class="solution-detail">
       <div class="solution-text">
         <div id="s-wrapper" class="text-wrapper">
-          <p class="eyebrow" id="s-eyebrow">Solution 01</p>
+          <span class="eyebrow" id="s-eyebrow">Solution 01</span>
           <h3 id="s-title">Multi-Temperature Storage</h3>
           <p id="s-copy">State-of-the-art cold rooms operating seamlessly from +15°C down to -25°C, equipped with automated Warehouse Management Systems (WMS) for real-time inventory tracking.</p>
         </div>
-        <div><a class="btn accent" href="#contact">Inquire about storage</a></div>
+        <div><a class="btn primary" href="#contact">Inquire About Storage</a></div>
       </div>
-      <div class="solution-photo" id="s-photo" style="--photo:url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1500&q=85')"></div>
+      <div class="solution-photo-wrap">
+        <div class="solution-photo" id="s-photo" style="--photo:url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1500&q=85')"></div>
+      </div>
     </article>
   </div>
 </section>
 
 <section class="section band reveal" id="values">
-  <p class="eyebrow">Why Choose IGLO</p>
-  <h2 class="section-title">Built on integrity, certified quality, and scale.</h2>
-  <p class="section-copy">We combine specialized infrastructure, rigorous temperature discipline, and strict regulatory compliance to protect the safety and freshness of your cargo.</p>
+  <div class="center">
+    <span class="eyebrow">Why Choose IGLO</span>
+    <h2 class="section-title">Built on integrity, certified quality, and scale.</h2>
+    <p class="section-copy">We combine specialized infrastructure, continuous temperature discipline, and strict regulatory compliance to safeguard your cargo.</p>
+  </div>
   <div class="value-grid">
     <div class="value">
       <b>01</b>
-      <h3>Temperature Discipline</h3>
-      <p>Continuous automated monitoring guarantees uncompromised cold chain integrity from dock to destination.</p>
+      <h3>Temperature Precision</h3>
+      <p>Automated real-time monitoring guarantees absolute temperature integrity from dock to destination.</p>
     </div>
     <div class="value">
       <b>02</b>
       <h3>Certified Compliance</h3>
-      <p>Fully accredited with JAKIM Halal, HACCP, and ISO 22000 standards for total food safety assurance.</p>
+      <p>Fully accredited with JAKIM Halal, HACCP, and ISO 22000 standards for complete safety assurance.</p>
     </div>
     <div class="value">
       <b>03</b>
       <h3>Strategic Hub</h3>
-      <p>Prime location in Port Klang offering unmatched connectivity to Westports, Northport, and major highways.</p>
+      <p>Prime location in Port Klang offering direct access to Westports, Northport, and major highways.</p>
     </div>
     <div class="value">
       <b>04</b>
-      <h3>Massive Expansion</h3>
-      <p>Scaling up from 10,000 to over 26,000 pallet positions with our brand-new Phase 2 facility expansion.</p>
+      <h3>Scalable Capacity</h3>
+      <p>Expanding to over 26,000 pallet positions with our state-of-the-art Phase 2 facility development.</p>
     </div>
   </div>
 </section>
@@ -197,29 +635,29 @@
 <section class="section facility reveal" id="facility">
   <div class="map-card"></div>
   <div>
-    <p class="eyebrow">Facility & Network</p>
+    <span class="eyebrow">Infrastructure & Network</span>
     <h2 class="section-title">Strategically anchored in Port Klang.</h2>
-    <p class="section-copy">Our primary complex currently houses 10,000 pallets, with a massive 16,000-pallet Phase 2 cold storage facility underway to support regional supply chain growth.</p>
+    <p class="section-copy">Our primary complex currently houses 10,000 pallets, with a 16,000-pallet expansion underway to support regional supply chain growth.</p>
     <div class="checks">
       <div class="check">
-        <span>✓</span>
+        <div class="check-icon">✓</div>
         <div>
-          <h3>Dedicated Multi-Temp Zones</h3>
-          <p>Customized frozen, chilled, ambient, and air-conditioned environments tailored to specific product requirements.</p>
+          <h3>Multi-Temperature Zones</h3>
+          <p>Customized frozen, chilled, ambient, and air-conditioned environments tailored to your product specs.</p>
         </div>
       </div>
       <div class="check">
-        <span>✓</span>
+        <div class="check-icon">✓</div>
         <div>
           <h3>Blast Freezing & Thawing</h3>
-          <p>High-capacity blast freezers for rapid pull-down and specialized controlled thawing facilities.</p>
+          <p>High-capacity blast freezers for rapid pull-down along with controlled thawing facilities.</p>
         </div>
       </div>
       <div class="check">
-        <span>✓</span>
+        <div class="check-icon">✓</div>
         <div>
-          <h3>Nationwide & Cross-Border Fleet</h3>
-          <p>GPS-equipped refrigerated trucks providing nationwide Peninsular distribution and cross-border delivery to Singapore and Thailand.</p>
+          <h3>Cross-Border Logistics</h3>
+          <p>GPS-monitored fleet providing distribution across Peninsular Malaysia, Singapore, and Thailand.</p>
         </div>
       </div>
     </div>
@@ -228,43 +666,42 @@
 
 <section class="section reveal" id="insights">
   <div class="center">
-    <p class="eyebrow">Industry Insights</p>
+    <span class="eyebrow">Industry Insights</span>
     <h2 class="section-title">Cold chain knowledge for smarter logistics.</h2>
   </div>
   <div class="news-grid">
     <article class="news">
       <time>Food Safety & Halal</time>
       <h3>Maintaining Halal & HACCP Integrity in Cold Storage</h3>
-      <p>Discover how rigorous segregation and certified handling protocols safeguard food safety across Malaysia.</p>
+      <p>How strict segregation protocols safeguard product integrity across cold chain networks.</p>
     </article>
     <article class="news">
       <time>Warehousing</time>
-      <h3>The Role of WMS in Temperature-Controlled Inventory</h3>
-      <p>How automated Warehouse Management Systems optimize FIFO rotation and eliminate temperature excursions.</p>
+      <h3>The Role of WMS in Temperature Control</h3>
+      <p>Optimizing FIFO rotation and eliminating temperature excursions with modern management platforms.</p>
     </article>
     <article class="news">
       <time>Distribution</time>
-      <h3>Navigating Cross-Border Refrigerated Transport</h3>
-      <p>Key considerations for seamless, temperature-monitored logistics between Malaysia, Singapore, and Thailand.</p>
+      <h3>Navigating Cross-Border Transport</h3>
+      <p>Key standards for seamless, temperature-monitored logistics between Malaysia, Singapore, and Thailand.</p>
     </article>
   </div>
 </section>
 
 <section class="cta reveal" id="contact">
   <div>
-    <p class="eyebrow" style="color:#fff">Get In Touch</p>
-    <h2>Ready to optimize your cold chain logistics?</h2>
-    <p>Connect with our specialists today for customized cold storage, blast freezing, or nationwide refrigerated transport solutions.</p>
+    <span class="eyebrow" style="color:var(--brand-teal)">Get In Touch</span>
+    <h2>Ready to optimize your cold chain operations?</h2>
+    <p>Connect with our specialists today for tailored cold storage, blast freezing, or refrigerated transport solutions.</p>
   </div>
-  <a class="btn accent" href="mailto:customer.service@ilm-my.com">Contact Us</a>
+  <a class="btn accent" href="mailto:customer.service@ilm-my.com">Contact Our Team</a>
 </section>
 </main>
 
 <footer class="footer">
   <div>
-    <a class="logo" href="#"><img src="images/SVG/iglo_logo_rgb.svg" alt="IGLO Logo" class="logo-img" /></a>
-    <p style="margin-top:20px">ILM Logistics (M) Sdn Bhd (IGLO)<br>Port Klang, Selangor, Malaysia</p>
-    <p>Email: customer.service@ilm-my.com<br>Phone: +(6)03-3168 9626</p>
+    <strong style="color:var(--white);font-size:18px">ILM Logistics (M) Sdn Bhd (IGLO)</strong>
+    <p>Port Klang, Selangor, Malaysia<br>Email: customer.service@ilm-my.com<br>Phone: +(6)03-3168 9626</p>
   </div>
   <div class="footer-links">
     <a href="#solutions">Solutions</a>
@@ -276,50 +713,39 @@
 </footer>
 
 <script>
-const data=[
-  ["Multi-Temperature Storage","State-of-the-art cold rooms operating seamlessly from +15°C down to -25°C, equipped with automated Warehouse Management Systems (WMS) for real-time inventory tracking.","url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1500&q=85')","Solution 01"],
-  ["Refrigerated Transportation","A modern fleet of GPS-monitored refrigerated trucks delivering nationwide across Peninsular Malaysia, with seamless cross-border capabilities to Singapore and Thailand.","url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1500&q=85')","Solution 02"],
-  ["Value-Added Services","Comprehensive end-to-end handling including high-speed blast freezing, controlled thawing, repacking, labeling, container plug-in, and customs clearance.","url('https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=1500&q=85')","Solution 03"]
+const data = [
+  ["Multi-Temperature Storage", "State-of-the-art cold rooms operating seamlessly from +15°C down to -25°C, equipped with automated Warehouse Management Systems (WMS) for real-time inventory tracking.", "url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1500&q=85')", "Solution 01"],
+  ["Refrigerated Transportation", "A modern fleet of GPS-monitored refrigerated trucks delivering nationwide across Peninsular Malaysia, with cross-border capabilities to Singapore and Thailand.", "url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1500&q=85')", "Solution 02"],
+  ["Value-Added Services", "End-to-end handling including high-speed blast freezing, controlled thawing, repacking, labeling, container plug-in, and customs clearance.", "url('https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=1500&q=85')", "Solution 03"]
 ];
 
 function showSolution(i){
   const wrapper = document.getElementById("s-wrapper");
+  document.querySelectorAll(".solution-menu button").forEach((b, n) => b.classList.toggle("active", n === i));
   
-  // 1. Toggle button states
-  document.querySelectorAll(".solution-menu button").forEach((b,n)=>b.classList.toggle("active",n===i));
-  
-  // 2. Fade out text
   wrapper.classList.add("fading");
   
-  // 3. Swap content and fade back in after timeout matches CSS transition
   setTimeout(() => {
-    document.getElementById("s-title").textContent=data[i][0];
-    document.getElementById("s-copy").textContent=data[i][1];
-    document.getElementById("s-photo").style.setProperty("--photo",data[i][2]);
-    document.getElementById("s-eyebrow").textContent=data[i][3];
+    document.getElementById("s-title").textContent = data[i][0];
+    document.getElementById("s-copy").textContent = data[i][1];
+    document.getElementById("s-photo").style.setProperty("--photo", data[i][2]);
+    document.getElementById("s-eyebrow").textContent = data[i][3];
     wrapper.classList.remove("fading");
-  }, 300);
+  }, 250);
 }
 
-// Scroll Reveal Observer
+// Lightweight Scroll Observer
 document.addEventListener('DOMContentLoaded', () => {
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
         entry.target.classList.add('active');
-        // Optional: stop observing once revealed
-        // observer.unobserve(entry.target); 
       }
     });
-  }, {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-  });
+  }, { threshold: 0.1 });
   
-  reveals.forEach(reveal => {
-    observer.observe(reveal);
-  });
+  reveals.forEach(reveal => observer.observe(reveal));
 });
 </script>
 </body>

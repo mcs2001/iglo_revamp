@@ -63,10 +63,13 @@ img{max-width:100%;display:block}
 .logo{
   display:flex;
   align-items:center;
-  gap:12px;
-  font-weight:900;
 }
-.logo-img{height:36px;width:auto}
+.logo-img{
+  height:42px;
+  width:auto;
+  min-width:120px;
+  object-fit:contain;
+}
 .nav{
   display:flex;
   gap:32px;
@@ -179,7 +182,6 @@ img{max-width:100%;display:block}
   min-height:480px;
   background:url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1500&q=85") center/cover;
 }
-/* Brand Manual 5.3: Overlay Tint (#005581 @ 50-60%) */
 .hero-visual::before{
   content:"";
   position:absolute;
@@ -309,7 +311,6 @@ img{max-width:100%;display:block}
   background:var(--photo) center/cover;
   transition:var(--transition);
 }
-/* Brand Overlay on Photo */
 .solution-photo-wrap::before{
   content:"";
   position:absolute;
